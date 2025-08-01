@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctu8sy2npmocm"
+path="res://.godot/imported/mini-game 2.ogg-9ea8086c3be2c360aaf2a39201301abd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/mini-game 2.ogg"
+dest_files=["res://.godot/imported/mini-game 2.ogg-9ea8086c3be2c360aaf2a39201301abd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

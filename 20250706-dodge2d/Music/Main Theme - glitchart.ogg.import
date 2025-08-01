@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyxpi2pbhtlge"
+path="res://.godot/imported/Main Theme - glitchart.ogg-4fd39e75a59c23ee0c1ff5c3498daa13.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Main Theme - glitchart.ogg"
+dest_files=["res://.godot/imported/Main Theme - glitchart.ogg-4fd39e75a59c23ee0c1ff5c3498daa13.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

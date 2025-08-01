@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ts67lr1ps54x"
-path="res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-042d4f1e78264fb9312442019abe631b.ctex"
+uid="uid://dv1eixyn6h2pa"
+path="res://.godot/imported/Room_Builder_Office_32x32.png-ab5c0cd2e6ed6453ecadff4606645226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Loop/2_Modern_Office_Black_Shadow/Modern_Office_Black_Shadow_32x32.png"
-dest_files=["res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-042d4f1e78264fb9312442019abe631b.ctex"]
+source_file="res://art/Loop/Assets/Room_Builder_Office_32x32.png"
+dest_files=["res://.godot/imported/Room_Builder_Office_32x32.png-ab5c0cd2e6ed6453ecadff4606645226.ctex"]
 
 [params]
 

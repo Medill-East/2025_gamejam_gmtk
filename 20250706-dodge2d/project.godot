@@ -13,7 +13,7 @@ config_version=5
 config/name="20250706-Dodge2D"
 run/main_scene="uid://dpsyo6o04wx07"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://scenes/icon.svg"
 
 [display]
 

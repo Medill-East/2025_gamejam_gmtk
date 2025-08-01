@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cil6jk16q1g5b"]
+
+[ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="1_cod0h"]
+
+[node name="Loop-main" type="Node2D"]
+
+[node name="Loop-player" parent="." instance=ExtResource("1_cod0h")]
+follow_speed = 100.0
+max_speed = 500.0

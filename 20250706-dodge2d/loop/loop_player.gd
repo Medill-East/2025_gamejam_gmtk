@@ -5,6 +5,10 @@ extends Node2D
 @export var follow_speed := 8.0        # 越大越“紧”，越小越“粘滞”
 @export var max_speed    := 1000.0     # 可选：限制瞬时速度，0 表示不限制
 
+@onready var _hud: HUD = get_tree().get_current_scene().get_node("Loop-hud") as HUD
+
+var current_item: Interactable = null   # 当前可交互物（可选）
+
 func _process(delta: float) -> void:
 	var target := get_global_mouse_position()
 	var to_target := target - global_position
@@ -18,3 +22,15 @@ func _process(delta: float) -> void:
 		step = step.normalized() * max_speed * delta
 
 	global_position += step
+
+
+func enter_interactable(item: Interactable) -> void:
+	current_item = item
+	# 这里也可以通知 HUD：show hold bar
+	print("进入交互范围：", item.name)
+
+func exit_interactable(item: Interactable) -> void:
+	if current_item == item:
+		current_item = null
+		# 也可以通知 HUD：hide
+		print("离开交互范围：", item.name)

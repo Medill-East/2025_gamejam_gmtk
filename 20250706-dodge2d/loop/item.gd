@@ -1,0 +1,71 @@
+extends Node2D
+class_name Interactable   # 便于自动补全
+
+@export var hold_threshold := 0.8      # 长按秒数
+@export var highlight_mode := 0        # 0=shader, 1=sprite
+@export var interact_text  := "长按 E 交互"  # 可用于 UI 提示
+
+var _player_in_range: bool = false
+var _hold_time: float = 0.0
+var _orig_material: Material
+
+@export var _sprite        = Sprite2D
+@export var _highlight_spr = Sprite2D
+@export var _area          = Area2D
+
+func _ready() -> void:
+	_area.body_entered.connect(_on_body_entered)
+	_area.body_exited.connect(_on_body_exited)
+	_highlight_spr.visible = false
+	#_orig_material = _sprite.material_override
+
+func _process(delta: float) -> void:
+	if not _player_in_range:
+		return
+
+	if Input.is_action_pressed("Interact"):
+		_hold_time += delta
+		if _hold_time >= hold_threshold:
+			_do_interact()
+			_hold_time = 0.0           # 重置，防止连触发
+	else:
+		_hold_time = 0.0               # 松开就归零，可在 UI 上显示进度
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("player"):          # 根据你的玩家节点名调整
+		_player_in_range = true
+		_enable_highlight(true)
+		# TODO: 在屏幕或 UI 中显示交互提示，例如调用 HUD.show_hint(interact_text)
+		# 安全检查：若玩家脚本没实现该方法也不会崩
+		if body.has_method("enter_interactable"):
+			body.enter_interactable(self)
+		
+
+func _on_body_exited(body: Node) -> void:
+	if body.is_in_group("player"):
+		_player_in_range = false
+		_hold_time = 0.0
+		_enable_highlight(false)
+		# TODO: HUD.hide_hint()
+		if body.has_method("exit_interactable"):
+			body.exit_interactable(self)
+
+func _enable_highlight(state: bool) -> void:
+	match highlight_mode:
+		#0:  # shader
+			#_sprite.material_override = preload("res://Highlight.tres") if state else _orig_material
+		1:  # extra sprite
+			_highlight_spr.visible = state
+
+func _do_interact() -> void:
+	# 这里写真正的互动逻辑，比如开门、拾取物品、弹对话框……
+	print("Item %s interacted!" % name)
+	# 例如：queue_free()  # 播完动画后销毁
+
+#
+#func _on_detect_body_entered(body: Node2D) -> void:
+	#pass # Replace with function body.
+#
+#
+#func _on_detect_body_exited(body: Node2D) -> void:
+	#pass # Replace with function body.

@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cil6jk16q1g5b"]
+[gd_scene load_steps=5 format=3 uid="uid://cil6jk16q1g5b"]
 
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="1_cod0h"]
 [ext_resource type="Script" uid="uid://bydjkewxk6l0w" path="res://loop/loop_main.gd" id="1_ovgfa"]
+[ext_resource type="PackedScene" uid="uid://ce5towxcryfg4" path="res://loop/loop-hud.tscn" id="3_bctr8"]
+[ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="4_2ulkd"]
 
 [node name="Loop-main" type="Node2D"]
 script = ExtResource("1_ovgfa")
 
+[node name="Loop-hud" parent="." instance=ExtResource("3_bctr8")]
+
+[node name="Item" parent="." instance=ExtResource("4_2ulkd")]
+position = Vector2(416, 320)
+
 [node name="Loop-player" parent="." instance=ExtResource("1_cod0h")]
-position = Vector2(256, 159)
-follow_speed = 100.0
-max_speed = 500.0
+position = Vector2(288, 288)

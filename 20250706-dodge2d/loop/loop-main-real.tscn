@@ -341,7 +341,7 @@
 [ext_resource type="Texture2D" uid="uid://b3g6a43bnpshm" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_97.png" id="337_elghw"]
 [ext_resource type="Texture2D" uid="uid://cgwd4qoiwpmqd" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_98.png" id="338_2l5e4"]
 [ext_resource type="Texture2D" uid="uid://d2yrrda62vbbt" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_99.png" id="339_23moj"]
-[ext_resource type="PackedScene" uid="uid://b4odqwp3gtigc" path="res://loop/loop-boss.tscn" id="342_olil0"]
+[ext_resource type="PackedScene" path="res://loop/loop-boss.tscn" id="342_olil0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olil0"]
 texture = ExtResource("1_6wxxv")

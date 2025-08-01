@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpvfoyjdrg1y1"]
+
+[ext_resource type="Script" uid="uid://gb6ajlvk56o5" path="res://loop/popup.gd" id="1_uw0fe"]
+[ext_resource type="Texture2D" uid="uid://d0iyd3nkus2e6" path="res://art/enemySwimming_1.png" id="2_ancin"]
+
+[node name="Popup" type="CanvasLayer" node_paths=PackedStringArray("_label", "_panel", "_btn")]
+process_mode = 3
+script = ExtResource("1_uw0fe")
+_label = NodePath("Panel/Text")
+_panel = NodePath("Panel")
+_btn = NodePath("Panel/CloseButton")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Panel"]
+layout_mode = 2
+offset_top = 348.0
+offset_right = 480.0
+offset_bottom = 371.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "test text"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_ancin")
+ignore_texture_size = true
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4odqwp3gtigc"]
+
+[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_duqep"]
+
+[node name="Loop-player" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.382905, 0.382905)
+texture = ExtResource("2_duqep")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(394, 185, 65, 111)

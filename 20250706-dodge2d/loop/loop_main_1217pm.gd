@@ -27,7 +27,7 @@ func _ready() -> void:
 	await _wait_hour(9)
 	await popup03.closed
 	adjust_boss(true)
-	await _wait_hour(20)
+	await _wait_hour(22)
 
 func _wait_hour(target: int):
 	while true:
@@ -36,7 +36,7 @@ func _wait_hour(target: int):
 		if hour == target:
 			if target == 9:
 				_popup03()
-			if target == 10:
+			if target == 22:
 				_popupeod()
 			break                                     # 满足→退出函数执行一次
 

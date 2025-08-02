@@ -81,6 +81,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "abc"
 
 [node name="Eric name2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 8.0
 offset_right = 512.0
@@ -90,6 +91,7 @@ text = "Guest"
 vertical_alignment = 2
 
 [node name="Guest dialogue" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 48.0
 offset_right = 472.0

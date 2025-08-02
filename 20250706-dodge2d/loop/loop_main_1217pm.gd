@@ -1,6 +1,13 @@
 extends Node2D
 
-var popup01 := preload("res://loop/popups/popup01.tscn").instantiate()
+var popup01 := preload("res://loop/popups/Dialogue/Dialogue_T01.tscn").instantiate()
+var popup02 := preload("res://loop/popups/Dialogue/Dialogue_T02.tscn").instantiate()
+var popup03 := preload("res://loop/popups/Dialogue/Dialogue_T03.tscn").instantiate()
+var popup04 := preload("res://loop/popups/Dialogue/Dialogue_T04.tscn").instantiate()
+var popup05 := preload("res://loop/popups/Dialogue/Dialogue_T05.tscn").instantiate()
+var popup06 := preload("res://loop/popups/Dialogue/Dialogue_T06.tscn").instantiate()
+var popup07 := preload("res://loop/popups/Dialogue/Dialogue_T07.tscn").instantiate()
+var popup08 := preload("res://loop/popups/Dialogue/Dialogue_T08.tscn").instantiate()
 
 @onready var clocklabel = $"Loop-clock"
 
@@ -22,6 +29,11 @@ func _popup01():
 	print("popup01")
 	add_child(popup01)
 	popup01.open()        # 打开&暂停
+	
+func _popup02():
+	print("popup02")
+	add_child(popup02)
+	popup01.open()        # 打开&暂停	
 
 func _on_hour_tick(h):
 	print("Ding！ %02d:00" % h)

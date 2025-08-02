@@ -57,7 +57,7 @@ func _update_bar():
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):          # 根据你的玩家节点名调整
 		_player_in_range = true
-		_enable_highlight(true)
+		# _enable_highlight(true)
 		# TODO: 在屏幕或 UI 中显示交互提示，例如调用 HUD.show_hint(interact_text)
 		# 安全检查：若玩家脚本没实现该方法也不会崩
 		if body.has_method("enter_interactable"):

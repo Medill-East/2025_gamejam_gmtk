@@ -1,7 +1,18 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://d2m8ksahygnpc"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://d2m8ksahygnpc"]
 
 [ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="1_oh8me"]
 [ext_resource type="Texture2D" uid="uid://dv1eixyn6h2pa" path="res://art/Loop/Assets/Room_Builder_Office_32x32.png" id="2_c5vwh"]
+[ext_resource type="PackedScene" uid="uid://0oj7h16a4r4k" path="res://loop/item-breakable/coffee-machine.tscn" id="3_rgame"]
+[ext_resource type="PackedScene" uid="uid://b0a334lho3g3l" path="res://loop/item-breakable/table-light-2.tscn" id="4_vpul3"]
+[ext_resource type="PackedScene" uid="uid://cnjbesipkhshv" path="res://loop/item-breakable/telephone.tscn" id="5_0m347"]
+[ext_resource type="PackedScene" uid="uid://biyxkxenwxk61" path="res://loop/item-breakable/keyboard.tscn" id="6_of456"]
+[ext_resource type="PackedScene" uid="uid://dxq2lxt27y813" path="res://loop/item-breakable/laptop-1.tscn" id="7_7wpan"]
+[ext_resource type="PackedScene" uid="uid://cf15gljy2l63a" path="res://loop/item-breakable/laptop-2.tscn" id="8_23qw4"]
+[ext_resource type="PackedScene" uid="uid://cfubu8fx52yvr" path="res://loop/item-breakable/laptop-3.tscn" id="9_ibvel"]
+[ext_resource type="PackedScene" uid="uid://c3qj53k5bcq1r" path="res://loop/item-breakable/potted-plant.tscn" id="10_1ywbx"]
+[ext_resource type="PackedScene" uid="uid://bw84j0tjcwarv" path="res://loop/item-breakable/printer.tscn" id="11_sm8en"]
+[ext_resource type="PackedScene" uid="uid://budutkgjrbg2q" path="res://loop/item-breakable/sofa.tscn" id="12_los4i"]
+[ext_resource type="PackedScene" uid="uid://ba8ckav7f31pc" path="res://loop/item-breakable/table-light-1.tscn" id="13_y7q8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxrv1"]
 texture = ExtResource("1_oh8me")
@@ -3589,8 +3600,23 @@ texture = ExtResource("2_c5vwh")
 12:27/0 = 0
 12:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rgame"]
+resource_name = "Breakables"
+scenes/1/scene = ExtResource("3_rgame")
+scenes/2/scene = ExtResource("6_of456")
+scenes/3/scene = ExtResource("7_7wpan")
+scenes/4/scene = ExtResource("8_23qw4")
+scenes/5/scene = ExtResource("9_ibvel")
+scenes/6/scene = ExtResource("10_1ywbx")
+scenes/7/scene = ExtResource("11_sm8en")
+scenes/8/scene = ExtResource("12_los4i")
+scenes/9/scene = ExtResource("13_y7q8t")
+scenes/10/scene = ExtResource("4_vpul3")
+scenes/11/scene = ExtResource("5_0m347")
+
 [resource]
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_wxrv1")
 sources/1 = SubResource("TileSetAtlasSource_pp7rb")
+sources/3 = SubResource("TileSetScenesCollectionSource_rgame")

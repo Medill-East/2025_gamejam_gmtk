@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cil6jk16q1g5b"]
+[gd_scene load_steps=7 format=3 uid="uid://cil6jk16q1g5b"]
 
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="1_cod0h"]
 [ext_resource type="Script" uid="uid://bydjkewxk6l0w" path="res://loop/loop_main.gd" id="1_ovgfa"]
 [ext_resource type="PackedScene" uid="uid://ce5towxcryfg4" path="res://loop/loop-hud.tscn" id="3_bctr8"]
 [ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="4_2ulkd"]
+[ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="5_vx0kr"]
+
+[sub_resource type="Curve2D" id="Curve2D_vx0kr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 112, 176, 0, 0, 0, 0, 296, 96, 0, 0, 0, 0, 496, 160, 0, 0, 0, 0, 608, 416, 0, 0, 0, 0, 256, 536, 0, 0, 0, 0, 112, 368, 0, 0, 0, 0, 112, 368, 0, 0, 0, 0, 112, 176)
+}
+point_count = 8
 
 [node name="Loop-main" type="Node2D"]
 script = ExtResource("1_ovgfa")
@@ -15,3 +22,10 @@ position = Vector2(416, 320)
 
 [node name="Loop-player" parent="." instance=ExtResource("1_cod0h")]
 position = Vector2(288, 288)
+
+[node name="Loop-boss" parent="." instance=ExtResource("5_vx0kr")]
+position = Vector2(296, 400)
+patrol_path = NodePath("../Path2D")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_vx0kr")

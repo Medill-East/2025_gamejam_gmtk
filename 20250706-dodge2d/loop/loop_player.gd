@@ -1,6 +1,7 @@
 extends Node2D
+class_name PLAYER
+static var instance: PLAYER
 
-# Player.gd  (挂在 Player 节点)
 
 @export var follow_speed := 8.0        # 越大越“紧”，越小越“粘滞”
 @export var max_speed    := 1000.0     # 可选：限制瞬时速度，0 表示不限制
@@ -8,6 +9,9 @@ extends Node2D
 @onready var _hud: HUD = get_tree().get_current_scene().get_node("Loop-hud") as HUD
 
 var current_item: Interactable = null   # 当前可交互物（可选）
+
+func _ready() -> void:
+	instance = self
 
 func _process(delta: float) -> void:
 	var target := get_global_mouse_position()

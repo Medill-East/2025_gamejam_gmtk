@@ -27,13 +27,13 @@ region_enabled = true
 region_rect = Rect2(48, 56, 600, 64)
 
 [node name="New Game" type="Sprite2D" parent="."]
-position = Vector2(480, 272)
+position = Vector2(475, 286)
 texture = ExtResource("1_7hwxd")
 region_enabled = true
 region_rect = Rect2(440, 90, 230, 60)
 
 [node name="Exit" type="Sprite2D" parent="."]
-position = Vector2(480, 352)
+position = Vector2(475, 366)
 texture = ExtResource("1_7hwxd")
 region_enabled = true
 region_rect = Rect2(495, 345, 120, 55)

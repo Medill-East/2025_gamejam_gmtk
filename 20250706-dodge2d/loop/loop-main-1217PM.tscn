@@ -77,5 +77,5 @@ position = Vector2(207, 106)
 
 [node name="Loop-clock" parent="." instance=ExtResource("7_bc0wx")]
 text = "08:00"
-speed_factor = 200
+speed_factor = 500
 start_seconds = 28800.0

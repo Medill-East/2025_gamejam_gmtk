@@ -19,13 +19,24 @@ func _ready() -> void:
 	await popup01.closed
 	print("popup01closed")
 	_popup02()
+	await _wait_hour(9)
+
+func _wait_hour(h: int):
+	print("wait hour")
+	h = await clocklabel.hour_tick   # 挂起，直到下一次整点
+	if h == 9:
+		_popup03()             # 只会执行一次
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	#current_hour = await clocklabel.hour_tick
 	#print(current_hour)
+	#if current_hour == 20:
+		#_popup03()
 
+func _on_hour_tick(h):
+	print("Ding！ %02d:00" % h)
 
 func _popup01():
 	print("popup01")
@@ -37,5 +48,7 @@ func _popup02():
 	add_child(popup02)
 	popup02.open()        # 打开&暂停	
 
-func _on_hour_tick(h):
-	print("Ding！ %02d:00" % h)
+func _popup03():
+	print("popup03")
+	add_child(popup03)
+	popup03.open()        # 打开&暂停	

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://fcx6yu1qhd4v"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_ascro"]
+
+[node name="Popup" instance=ExtResource("1_ascro")]
+
+[node name="Narrator" parent="Panel" index="1"]
+text = "
+Eric is trapped in the same mind-numbing work day after day. He’s itching to stir up some chaos in the office—just enough to make the boss hand out a nice, long vacation. Maybe… it’s not just the employees who want a break."
+
+[node name="Eric name" parent="Panel" index="2"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="3"]
+visible = false
+
+[node name="Eric name2" parent="Panel" index="4"]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 64.0
+offset_bottom = 40.0
+
+[node name="Guest dialogue" parent="Panel" index="5"]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 344.0
+offset_bottom = 64.0

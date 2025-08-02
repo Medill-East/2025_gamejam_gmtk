@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://jxgtqqt54vl4"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_rw0m7"]
+
+[node name="Popup" instance=ExtResource("1_rw0m7")]
+
+[node name="Eric dialogue" parent="Panel" index="3"]
+text = "T08"
+
+[node name="Eric name2" parent="Panel" index="4"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 64.0
+offset_bottom = 40.0
+
+[node name="Guest dialogue" parent="Panel" index="5"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 344.0
+offset_bottom = 64.0

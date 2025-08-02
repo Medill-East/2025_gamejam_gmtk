@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dengefojuwhaj"]
+
+[ext_resource type="Script" uid="uid://fgriav8tvgxv" path="res://loop/loop_minigame_chase.gd" id="1_a0d8f"]
+[ext_resource type="PackedScene" uid="uid://bm17yl36fb4yd" path="res://loop/loop-minigame-chase-enemy.tscn" id="3_e62qw"]
+[ext_resource type="PackedScene" uid="uid://yli23frp1h8d" path="res://loop/loop-minigame-chase-player2.tscn" id="4_a0d8f"]
+[ext_resource type="PackedScene" uid="uid://ger46k0q38jv" path="res://loop/loop-minigame-chase-trailblock.tscn" id="4_fcs84"]
+
+[node name="Loop-minigame-chase" type="Node2D" node_paths=PackedStringArray("timer")]
+script = ExtResource("1_a0d8f")
+timer = NodePath("CanvasLayer/Label")
+START_TIME = 15.0
+
+[node name="TrailRoot" type="Node2D" parent="."]
+
+[node name="Loop-minigame-chase-trailblock2-LEFT" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(0, 344)
+scale = Vector2(1, 24)
+
+[node name="Loop-minigame-chase-trailblock3-UP" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(624, -16)
+rotation = -1.57079
+scale = Vector2(2, 48)
+
+[node name="Loop-minigame-chase-trailblock4-DOWN" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(568, 544)
+rotation = 1.57079
+scale = Vector2(2, 48)
+
+[node name="Loop-minigame-chase-trailblock5-RIGHT" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(952, 350)
+scale = Vector2(1, 24)
+
+[node name="Loop-minigame-chase-enemy" parent="." node_paths=PackedStringArray("minigame_chase_player", "trail_root") instance=ExtResource("3_e62qw")]
+position = Vector2(760, 288)
+speed = 150.0
+minigame_chase_player = NodePath("../Loop-minigame-chase-player2")
+trail_root = NodePath("../TrailRoot")
+
+[node name="Loop-minigame-chase-trailblock" parent="." instance=ExtResource("4_fcs84")]
+position = Vector2(568, 328)
+
+[node name="Loop-minigame-chase-player2" parent="." instance=ExtResource("4_a0d8f")]
+position = Vector2(512, 280)
+max_speed = 300.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 34.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1

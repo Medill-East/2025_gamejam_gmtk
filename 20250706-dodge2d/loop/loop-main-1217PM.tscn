@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=4 uid="uid://cwgddj4xigwm5"]
+[gd_scene load_steps=18 format=4 uid="uid://cwgddj4xigwm5"]
 
 [ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="1_yqg21"]
 [ext_resource type="Texture2D" uid="uid://dv1eixyn6h2pa" path="res://art/Loop/Assets/Room_Builder_Office_32x32.png" id="2_yt6ow"]
 [ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="3_vgdvs"]
-[ext_resource type="PackedScene" uid="uid://b4odqwp3gtigc" path="res://loop/loop-boss.tscn" id="4_bc0wx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxrv1"]
 texture = ExtResource("1_yqg21")
@@ -13947,11 +13946,8 @@ tile_map_data = PackedByteArray("AAAnAAEAAAAYAB8AAAAnAAIAAAAYACAAAAAnAAMAAAAYACE
 tile_set = SubResource("TileSet_ph4g1")
 
 [node name="Colleague" type="Sprite2D" parent="."]
-position = Vector2(250, 240)
+position = Vector2(479, 193)
 scale = Vector2(0.355419, 0.355419)
 texture = ExtResource("3_vgdvs")
 region_enabled = true
 region_rect = Rect2(480, 24, 79.9094, 128)
-
-[node name="Loop-boss" parent="." instance=ExtResource("4_bc0wx")]
-position = Vector2(395, 102)

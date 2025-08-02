@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgr5ppav0ajjf"]
+
+[ext_resource type="PackedScene" uid="uid://b56ws0nkbc0s5" path="res://loop/characters/Charater.tscn" id="1_yb4jo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l2gje"]
+load_path = "res://.godot/imported/Characters.png-52b3f7bcec2682b49fd99b4e014bf088.ctex"
+
+[node name="Charater" instance=ExtResource("1_yb4jo")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("CompressedTexture2D_l2gje")
+region_enabled = true
+region_rect = Rect2(664, 15, 90, 135)

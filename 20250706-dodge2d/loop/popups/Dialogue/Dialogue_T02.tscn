@@ -5,22 +5,22 @@
 
 [node name="Popup" instance=ExtResource("1_qegfu")]
 
-[node name="Narrator" parent="Panel" index="1"]
+[node name="Narrator" parent="Panel" index="0"]
 visible = false
 
-[node name="Eric dialogue" parent="Panel" index="3"]
+[node name="Eric dialogue" parent="Panel" index="2"]
 offset_right = 440.0
 offset_bottom = 336.0
 text = "This cursed job is so repetitive I could puke. Time to give everyone a vacation. Now… what mischief should I start with? Maybe I’ll break a few things so nobody can work!"
 
-[node name="Eric name2" parent="Panel" index="4"]
+[node name="Eric name2" parent="Panel" index="3"]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 64.0
 offset_bottom = 40.0
 text = "Boss"
 
-[node name="Guest dialogue" parent="Panel" index="5"]
+[node name="Guest dialogue" parent="Panel" index="4"]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 344.0

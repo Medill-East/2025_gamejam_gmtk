@@ -10,19 +10,22 @@ var popup07 := preload("res://loop/popups/Dialogue/Dialogue_T07.tscn").instantia
 var popup08 := preload("res://loop/popups/Dialogue/Dialogue_T08.tscn").instantiate()
 
 @onready var clocklabel = $"Loop-clock"
+@onready var boss: = $"Loop-boss"
 
 var current_hour
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	adjust_boss(false)
 	_popup01()
 	await popup01.closed
 	#print("popup01closed")
 	_popup02()
 	await popup02.closed
 	#print("popup02closed")
-	
 	await _wait_hour(9)
+	await popup03.closed
+	adjust_boss(true)
 
 func _wait_hour(target: int):
 	while true:
@@ -40,6 +43,12 @@ func _process(delta: float) -> void:
 	#print(current_hour)
 	#if current_hour == 20:
 		#_popup03()
+
+func adjust_boss(status: bool):
+	boss.visible = status
+	boss.set_process(status)
+	boss.set_physics_process(status)
+	
 
 func _on_hour_tick(h):
 	print("Ding！ %02d:00" % h)

@@ -45,7 +45,7 @@ func _patrol(delta):
 	if global_position.distance_to(target) < 4.0:
 		_patrol_idx = (_patrol_idx + 1) % patrol_points.size()
 		
-	print(velocity.x)
+	#print(velocity.x)
 	# scale = 1, left
 	# scale = -1, right
 	#var facing_left := scale.x > 0   # 初始化

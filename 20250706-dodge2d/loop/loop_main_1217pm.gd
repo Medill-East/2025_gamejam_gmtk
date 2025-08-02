@@ -18,6 +18,7 @@ func _ready() -> void:
 	_popup01()
 	await popup01.closed
 	print("popup01closed")
+	_popup02()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,7 +34,7 @@ func _popup01():
 func _popup02():
 	print("popup02")
 	add_child(popup02)
-	popup01.open()        # 打开&暂停	
+	popup02.open()        # 打开&暂停	
 
 func _on_hour_tick(h):
 	print("Ding！ %02d:00" % h)

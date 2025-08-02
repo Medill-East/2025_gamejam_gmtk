@@ -97,3 +97,8 @@ func get_ratio() -> float:
 #
 #func _on_detect_body_exited(body: Node2D) -> void:
 	#pass # Replace with function body.
+
+
+func _on_detect_mouse_entered() -> void:
+	print("mouse entered")
+	#pass # Replace with function body.

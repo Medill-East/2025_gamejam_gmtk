@@ -53,3 +53,4 @@ shape = SubResource("RectangleShape2D_v44np")
 
 [connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_detect_body_exited"]
+[connection signal="mouse_entered" from="Detect" to="." method="_on_detect_mouse_entered"]

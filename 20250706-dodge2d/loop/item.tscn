@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://boa7bokteffhi" path="res://loop/loop-worldholdbar2d.tscn" id="4_v44np"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v44np"]
+radius = 9.84615
 
 [node name="Item" type="Node2D" node_paths=PackedStringArray("_sprite", "_highlight_spr", "_area", "bar2d")]
 script = ExtResource("1_bxm1y")
@@ -18,8 +19,11 @@ _area = NodePath("Detect")
 bar2d = NodePath("Loop-worldholdbar2d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
 texture = ExtResource("2_jyv86")
 offset = Vector2(16, 0)
+region_enabled = true
+region_rect = Rect2(0, 34, 30, 36)
 
 [node name="High" type="Sprite2D" parent="."]
 visible = false

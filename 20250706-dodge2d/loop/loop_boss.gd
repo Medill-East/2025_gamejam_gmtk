@@ -15,6 +15,10 @@ var patrol_points: Array[Vector2]
 var _patrol_idx := 0
 var _player_ref: PLAYER = null
 
+# rotation
+var facing_left = true
+var THRESH := 10 # 像素/秒
+
 func _ready():
 	var path: Path2D = get_node(patrol_path)
 	patrol_points = []
@@ -24,7 +28,7 @@ func _ready():
 		patrol_points.append(curve.get_point_position(i))
 		
 	_vision_area.body_entered.connect(_on_player_spotted)
-	_init_vision_shape()
+	#_init_vision_shape()
 	#_spawn_rays()
 
 func _physics_process(delta):
@@ -40,11 +44,23 @@ func _patrol(delta):
 
 	if global_position.distance_to(target) < 4.0:
 		_patrol_idx = (_patrol_idx + 1) % patrol_points.size()
+		
+	print(velocity.x)
+	# scale = 1, left
+	# scale = -1, right
+	#var facing_left := scale.x > 0   # 初始化
+	#moving to left
+	if velocity.x < 0 and facing_left != true:
+		scale.x = 1
+		facing_left = true
+	elif velocity.x > 0 and facing_left == true:
+		scale.x = -1
+		facing_left = false
 
 # ---------- 视锥朝向 & 遮挡 ----------
 func _update_vision(delta):
 	# 让 VisionArea 与敌人同角度（假设 Sprite 面向 +X）
-	_vision_area.rotation = rotation
+	#_vision_area.rotation = rotation
 
 	# 遮挡检测：更新每条 RayCast2D 的目标点
 	for i in _ray_holder.get_children():

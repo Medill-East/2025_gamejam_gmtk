@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpvfoyjdrg1y1"]
 
 [ext_resource type="Script" uid="uid://gb6ajlvk56o5" path="res://loop/popups/popup.gd" id="1_uw0fe"]
-[ext_resource type="PackedScene" uid="uid://cobo6j7grmsj3" path="res://loop/characters/Eric.tscn" id="3_6hsmb"]
+[ext_resource type="PackedScene" uid="uid://4e1p82701x1y" path="res://loop/characters/Eric-dialogue.tscn" id="2_58d2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38d60"]
 bg_color = Color(0.694118, 0.729412, 0.784314, 1)
@@ -99,7 +99,7 @@ offset_bottom = 354.0
 grow_horizontal = 0
 action_mode = 0
 
-[node name="Eric" parent="." instance=ExtResource("3_6hsmb")]
+[node name="Eric" parent="." instance=ExtResource("2_58d2f")]
 position = Vector2(96, 389)
 scale = Vector2(1.2, 1.2)
 

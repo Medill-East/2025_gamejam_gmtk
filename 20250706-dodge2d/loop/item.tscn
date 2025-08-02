@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7h1bb5pvtdo0"]
+[gd_scene load_steps=7 format=3 uid="uid://b7h1bb5pvtdo0"]
 
 [ext_resource type="Script" uid="uid://dcnxk40eggpna" path="res://loop/item.gd" id="1_bxm1y"]
-[ext_resource type="Texture2D" uid="uid://dtcpvpgdqsq2y" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_148.png" id="2_jyv86"]
+[ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="2_v44np"]
 [ext_resource type="Texture2D" uid="uid://5kruttxw7d43" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_152.png" id="3_jyv86"]
 [ext_resource type="PackedScene" uid="uid://boa7bokteffhi" path="res://loop/loop-worldholdbar2d.tscn" id="4_v44np"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v44np"]
-radius = 9.84615
+radius = 6.46886
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v44np"]
+size = Vector2(32, 8)
 
 [node name="Item" type="Node2D" node_paths=PackedStringArray("_sprite", "_highlight_spr", "_area", "bar2d")]
 script = ExtResource("1_bxm1y")
@@ -20,10 +23,10 @@ bar2d = NodePath("Loop-worldholdbar2d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-16, 0)
-texture = ExtResource("2_jyv86")
+texture = ExtResource("2_v44np")
 offset = Vector2(16, 0)
 region_enabled = true
-region_rect = Rect2(0, 34, 30, 36)
+region_rect = Rect2(256, 706, 30, 36)
 
 [node name="High" type="Sprite2D" parent="."]
 visible = false
@@ -41,6 +44,12 @@ shape = SubResource("CircleShape2D_v44np")
 [node name="Loop-worldholdbar2d" parent="." instance=ExtResource("4_v44np")]
 visible = false
 position = Vector2(-32, -32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_v44np")
 
 [connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_detect_body_exited"]

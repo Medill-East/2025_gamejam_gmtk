@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3qj53k5bcq1r"]
+
+[ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_i7u1x"]
+[ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="2_1mc3b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mc3b"]
+radius = 5.38681
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5a7q"]
+size = Vector2(20, 13)
+
+[node name="Item" instance=ExtResource("1_i7u1x")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_1mc3b")
+region_rect = Rect2(192, 328, 32, 37)
+
+[node name="CollisionShape2D" parent="Detect" index="0"]
+shape = SubResource("CircleShape2D_1mc3b")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_i5a7q")

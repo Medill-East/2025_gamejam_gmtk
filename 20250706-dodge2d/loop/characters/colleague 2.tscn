@@ -9,5 +9,6 @@ load_path = "res://.godot/imported/Characters.png-52b3f7bcec2682b49fd99b4e014bf0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_l2gje")
+flip_h = true
 region_enabled = true
 region_rect = Rect2(119, 25, 70, 125)

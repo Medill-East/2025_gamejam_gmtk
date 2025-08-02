@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="1_qggq4"]
 
 [node name="Charater" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qggq4")

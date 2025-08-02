@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cwgddj4xigwm5"]
+[gd_scene load_steps=9 format=4 uid="uid://cwgddj4xigwm5"]
 
 [ext_resource type="TileSet" uid="uid://d2m8ksahygnpc" path="res://loop/Tileset_Roombuild.tres" id="1_22a7a"]
 [ext_resource type="Script" uid="uid://36dswio763rn" path="res://loop/loop_main_1217pm.gd" id="1_yqg21"]
-[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="3_vgdvs"]
+[ext_resource type="PackedScene" uid="uid://c0h4mo105g875" path="res://loop/characters/colleague 1.tscn" id="3_vgdvs"]
+[ext_resource type="PackedScene" uid="uid://bcd8l4lygdfey" path="res://loop/characters/colleague 2.tscn" id="4_bc0wx"]
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="4_yt6ow"]
+[ext_resource type="PackedScene" uid="uid://bgr5ppav0ajjf" path="res://loop/characters/colleague 3.tscn" id="5_bd70e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)
@@ -60,12 +62,14 @@ shape = SubResource("RectangleShape2D_yqg21")
 tile_map_data = PackedByteArray("AAAnAAEAAAAYAB8AAAAnAAIAAAAYACAAAAAnAAMAAAAYACEAAAAnAAQAAAAYACIAAAAoAAEAAAAZAB8AAAAoAAIAAAAZACAAAAAoAAMAAAAZACEAAAAoAAQAAAAZACIAAAAUAAIAAAAMABQAAAAUAAMAAAAMABUAAAAUAAQAAAAMABYAAAAVAAIAAAANABQAAAAVAAMAAAANABUAAAAVAAQAAAANABYAAAAcAAIAAAAMABQAAAAcAAMAAAAMABUAAAAcAAQAAAAMABYAAAAdAAIAAAANABQAAAAdAAMAAAANABUAAAAdAAQAAAANABYAAAAYAAgAAAAMABQAAAAYAAkAAAAMABUAAAAYAAoAAAAMABYAAAAZAAgAAAANABQAAAAZAAkAAAANABUAAAAZAAoAAAANABYAAAARAAwAAAAcACMAAAARAA0AAAAcACQAAAASAAwAAAAdACMAAAASAA0AAAAdACQAAAAgABYAAAAcACMAAAAgABcAAAAcACQAAAAhABYAAAAdACMAAAAhABcAAAAdACQAAAAIABYAAAAcACMAAAAIABcAAAAcACQAAAAJABYAAAAdACMAAAAJABcAAAAdACQAAAAYAAwAAAAUABIAAAAYAA0AAAAUABMAAAAZAAwAAAAVABIAAAAZAA0AAAAVABMAAAANABMAAAAUABIAAAANABQAAAAUABMAAAAOABMAAAAVABIAAAAOABQAAAAVABMAAAA=")
 tile_set = ExtResource("1_22a7a")
 
-[node name="Colleague" type="Sprite2D" parent="."]
-position = Vector2(479, 193)
-scale = Vector2(0.355419, 0.355419)
-texture = ExtResource("3_vgdvs")
-region_enabled = true
-region_rect = Rect2(480, 24, 79.9094, 128)
+[node name="Charater" parent="Day1" instance=ExtResource("3_vgdvs")]
+position = Vector2(255, 230)
+
+[node name="Charater2" parent="Day1" instance=ExtResource("4_bc0wx")]
+position = Vector2(341, 232)
+
+[node name="Charater3" parent="Day1" instance=ExtResource("5_bd70e")]
+position = Vector2(489, 205)
 
 [node name="Loop-player" parent="." instance=ExtResource("4_yt6ow")]
 position = Vector2(207, 106)

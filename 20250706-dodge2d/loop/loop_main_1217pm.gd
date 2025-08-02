@@ -17,15 +17,21 @@ var current_hour
 func _ready() -> void:
 	_popup01()
 	await popup01.closed
-	print("popup01closed")
+	#print("popup01closed")
 	_popup02()
+	await popup02.closed
+	#print("popup02closed")
+	
 	await _wait_hour(9)
 
-func _wait_hour(h: int):
-	print("wait hour")
-	h = await clocklabel.hour_tick   # 挂起，直到下一次整点
-	if h == 9:
-		_popup03()             # 只会执行一次
+func _wait_hour(target: int):
+	while true:
+		var hour : int = await clocklabel.hour_tick   # 等下一次整点
+		#print(hour)
+		if hour == target:
+			if target == 9:
+				_popup03()
+			break                                     # 满足→退出函数执行一次
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

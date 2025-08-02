@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpvfoyjdrg1y1"]
+[gd_scene load_steps=4 format=3 uid="uid://dpvfoyjdrg1y1"]
 
 [ext_resource type="Script" uid="uid://gb6ajlvk56o5" path="res://loop/popups/popup.gd" id="1_uw0fe"]
-[ext_resource type="Texture2D" uid="uid://d0iyd3nkus2e6" path="res://art/enemySwimming_1.png" id="2_ancin"]
 [ext_resource type="PackedScene" uid="uid://cobo6j7grmsj3" path="res://loop/characters/Eric.tscn" id="3_6hsmb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38d60"]
@@ -28,19 +27,8 @@ offset_right = -60.0
 offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_38d60")
-
-[node name="CloseButton" type="TextureButton" parent="Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-texture_normal = ExtResource("2_ancin")
-ignore_texture_size = true
 
 [node name="Narrator" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
@@ -98,6 +86,18 @@ offset_right = 472.0
 offset_bottom = 112.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "abc"
+
+[node name="CloseButton" type="Button" parent="Panel"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -576.0
+offset_bottom = 354.0
+grow_horizontal = 0
+action_mode = 0
 
 [node name="Eric" parent="." instance=ExtResource("3_6hsmb")]
 position = Vector2(96, 389)

@@ -7,7 +7,7 @@ static var instance: POPUP
 
 @export var _label: RichTextLabel
 @export var _panel: Panel
-@export var _btn: TextureButton
+@export var _btn: Button
 
 var currentText: String
 
@@ -19,7 +19,7 @@ func _ready() -> void:
 	currentText = _label.text
 
 	_panel.gui_input.connect(_on_panel_input)
-	_btn.pressed.connect(close)
+	#_btn.pressed.connect(close)
 	#currentText = "Do your job!"
 
 # -------- 公共接口 --------
@@ -43,3 +43,8 @@ func update_text(string: String):
 func _on_panel_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		close()
+
+
+func _on_close_button_pressed() -> void:
+	print("pressed to close")
+	close()

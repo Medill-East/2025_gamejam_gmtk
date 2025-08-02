@@ -13,23 +13,46 @@ var _orig_material: Material
 @export var _highlight_spr = Sprite2D
 @export var _area          = Area2D
 
+@export var bar2d: Node2D
+#@export var bar_offset_px := Vector2(0, 0)   # 条离物体上移像素
+#var bar: Control                     # 屏幕上的条实例
+#@onready var _hud: HUD = get_tree().get_current_scene().get_node("Loop-hud") as HUD
+
 func _ready() -> void:
 	_area.body_entered.connect(_on_body_entered)
 	_area.body_exited.connect(_on_body_exited)
 	_highlight_spr.visible = false
 	#_orig_material = _sprite.material_override
+	#bar = HUD.instance.create_world_bar()      # 拿到条；HUD 用单例
 
 func _process(delta: float) -> void:
-	if not _player_in_range:
-		return
+	# 位置跟随
+	#if bar.visible:
+		#var cam := get_viewport().get_camera_2d()
+		#if cam:
+			#var screen_pos: Vector2 = cam.world_to_screen(global_position)
+			#bar.position = screen_pos + bar_offset_px   # (0,-24) 之类
+#
+	#
+	#if not _player_in_range:
+		#return
 
-	if Input.is_action_pressed("Interact"):
-		_hold_time += delta
-		if _hold_time >= hold_threshold:
-			_do_interact()
-			_hold_time = 0.0           # 重置，防止连触发
+	if _player_in_range:
+		if Input.is_action_pressed("Interact"):
+			_hold_time += delta
+			if _hold_time >= hold_threshold:
+				_do_interact()
+				_hold_time = 0.0           # 重置，防止连触发
+		else:
+			_hold_time = 0.0               # 松开就归零，可在 UI 上显示进度
+		_update_bar()
 	else:
-		_hold_time = 0.0               # 松开就归零，可在 UI 上显示进度
+		bar2d.visible = false        # 离开范围就隐藏
+
+func _update_bar():
+	bar2d.visible = true
+	var pb := bar2d.get_node("Bar") as ProgressBar
+	pb.value = _hold_time / hold_threshold * 100.0
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):          # 根据你的玩家节点名调整
@@ -61,7 +84,12 @@ func _do_interact() -> void:
 	# 这里写真正的互动逻辑，比如开门、拾取物品、弹对话框……
 	print("Item %s interacted!" % name)
 	# 例如：queue_free()  # 播完动画后销毁
+	bar2d.visible = false            # 交互完成后可隐藏或 queue_free()
 
+# 方便外部直接拿 0~1 的进度
+func get_ratio() -> float:
+	return _hold_time / hold_threshold
+	
 #
 #func _on_detect_body_entered(body: Node2D) -> void:
 	#pass # Replace with function body.

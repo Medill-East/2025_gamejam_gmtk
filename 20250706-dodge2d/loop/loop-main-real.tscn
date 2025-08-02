@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="1_6wxxv"]
 [ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="3_n6xin"]
 [ext_resource type="Texture2D" uid="uid://dv1eixyn6h2pa" path="res://art/Loop/Assets/Room_Builder_Office_32x32.png" id="4_mehre"]
-[ext_resource type="PackedScene" uid="uid://b4odqwp3gtigc" path="res://loop/loop-boss.tscn" id="342_olil0"]
+[ext_resource type="PackedScene" path="res://loop/loop-boss.tscn" id="342_olil0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxrv1"]
 texture = ExtResource("3_n6xin")

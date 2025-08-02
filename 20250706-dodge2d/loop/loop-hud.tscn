@@ -2,11 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bd7hjplhse4ec" path="res://loop/loop_hud.gd" id="1_kvh28"]
 
-[node name="Loop-hud" type="CanvasLayer" node_paths=PackedStringArray("_bar")]
+[node name="Loop-hud" type="CanvasLayer"]
 script = ExtResource("1_kvh28")
-_bar = NodePath("HoldBar")
 
-[node name="HoldBar" type="TextureProgressBar" parent="."]
+[node name="HoldBar" type="ProgressBar" parent="."]
+visible = false
+offset_right = 128.0
+offset_bottom = 40.0
+step = 1.0
+show_percentage = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tint_progress = Color(1, 0.296238, 0.359342, 1)

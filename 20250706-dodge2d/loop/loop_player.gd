@@ -22,6 +22,13 @@ func _process(delta: float) -> void:
 		step = step.normalized() * max_speed * delta
 
 	global_position += step
+	
+	## item interaction
+	#if current_item and current_item._player_in_range:
+		#var ratio := current_item.get_ratio()
+		#_hud.update_hold_progress(ratio, true)
+	#else:
+		#_hud.update_hold_progress(0.0, false)
 
 
 func enter_interactable(item: Interactable) -> void:

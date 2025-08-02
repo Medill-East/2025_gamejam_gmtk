@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7h1bb5pvtdo0"]
+[gd_scene load_steps=6 format=3 uid="uid://b7h1bb5pvtdo0"]
 
 [ext_resource type="Script" uid="uid://dcnxk40eggpna" path="res://loop/item.gd" id="1_bxm1y"]
 [ext_resource type="Texture2D" uid="uid://dtcpvpgdqsq2y" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_148.png" id="2_jyv86"]
 [ext_resource type="Texture2D" uid="uid://5kruttxw7d43" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_152.png" id="3_jyv86"]
+[ext_resource type="PackedScene" uid="uid://boa7bokteffhi" path="res://loop/loop-worldholdbar2d.tscn" id="4_v44np"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v44np"]
 
-[node name="Item" type="Node2D" node_paths=PackedStringArray("_sprite", "_highlight_spr", "_area")]
+[node name="Item" type="Node2D" node_paths=PackedStringArray("_sprite", "_highlight_spr", "_area", "bar2d")]
 script = ExtResource("1_bxm1y")
 hold_threshold = 3.0
 highlight_mode = 1
@@ -14,6 +15,7 @@ interact_text = "Press \"Space\" to Interact"
 _sprite = NodePath("Sprite2D")
 _highlight_spr = NodePath("High")
 _area = NodePath("Detect")
+bar2d = NodePath("Loop-worldholdbar2d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jyv86")
@@ -31,6 +33,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
 scale = Vector2(6.5, 6.5)
 shape = SubResource("CircleShape2D_v44np")
+
+[node name="Loop-worldholdbar2d" parent="." instance=ExtResource("4_v44np")]
+visible = false
+position = Vector2(-32, -32)
 
 [connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_detect_body_exited"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd87a47xs6uoo"]
+
+[ext_resource type="Script" uid="uid://633cal0t2qbt" path="res://loop/ingredients/loop_clock_label.gd" id="1_wnahf"]
+
+[node name="Loop-clock" type="Label"]
+offset_left = 16.0
+offset_top = 464.0
+offset_right = 93.0
+offset_bottom = 506.0
+theme_override_font_sizes/font_size = 30
+text = "10:00"
+script = ExtResource("1_wnahf")
+realtime = false
+speed_factor = 900
+start_seconds = 36000.0

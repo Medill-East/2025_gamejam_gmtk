@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cwgddj4xigwm5"]
+[gd_scene load_steps=10 format=4 uid="uid://cwgddj4xigwm5"]
 
 [ext_resource type="TileSet" uid="uid://d2m8ksahygnpc" path="res://loop/Tileset_Roombuild.tres" id="1_22a7a"]
 [ext_resource type="Script" uid="uid://36dswio763rn" path="res://loop/loop_main_1217pm.gd" id="1_yqg21"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcd8l4lygdfey" path="res://loop/characters/colleague 2.tscn" id="4_bc0wx"]
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="4_yt6ow"]
 [ext_resource type="PackedScene" uid="uid://bgr5ppav0ajjf" path="res://loop/characters/colleague 3.tscn" id="5_bd70e"]
+[ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_bc0wx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)
@@ -73,3 +74,5 @@ position = Vector2(489, 205)
 
 [node name="Loop-player" parent="." instance=ExtResource("4_yt6ow")]
 position = Vector2(207, 106)
+
+[node name="Loop-clock" parent="." instance=ExtResource("7_bc0wx")]

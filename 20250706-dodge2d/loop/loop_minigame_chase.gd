@@ -3,7 +3,9 @@ class_name MINIGAME_CHASE
 
 static var instance: MINIGAME_CHASE
 
-@export var timer: Label
+var timerParent := preload("res://loop/loop-minigame-chase.tscn")
+
+@onready var timer: = $CanvasLayer/Label
 
 @export var START_TIME := 5.0          # 生存多少秒胜利
 var time_left := 0.0

@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://yli23frp1h8d" path="res://loop/loop-minigame-chase-player2.tscn" id="4_a0d8f"]
 [ext_resource type="PackedScene" uid="uid://ger46k0q38jv" path="res://loop/loop-minigame-chase-trailblock.tscn" id="4_fcs84"]
 
-[node name="Loop-minigame-chase" type="Node2D"]
+[node name="Loop-minigame-chase" type="Node2D" node_paths=PackedStringArray("timer")]
 script = ExtResource("1_a0d8f")
+timer = NodePath("CanvasLayer/Label")
 START_TIME = 15.0
 
 [node name="TrailRoot" type="Node2D" parent="."]

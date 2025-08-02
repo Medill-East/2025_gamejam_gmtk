@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="20250706-Dodge2D"
-run/main_scene="uid://cil6jk16q1g5b"
+run/main_scene="uid://c5414gd3flnk7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://scenes/icon.svg"
 
@@ -19,7 +19,6 @@ config/icon="res://scenes/icon.svg"
 
 MusicPlayer="*res://music_player.tscn"
 AUTOLOAD_LoopGameGD="*res://loop/loop_game.gd"
-AUTOLOAD_LOOPMINIGAMECHASE="*res://loop/loop-minigame-chase.tscn"
 AUTOLOAD_POPUP="*res://loop/popup.tscn"
 
 [display]

@@ -41,7 +41,7 @@ func _spawn_block():
 # ---------- 发现玩家 ----------
 func _on_player_spotted(body: Node) -> void:
 	if body is MINI_CHASE_PLAYER:
-		AUTOLOAD_LOOPMINIGAMECHASE.fail()                               # 全局管理器里触发失败
+		AUTOLOAD_LOOPMINIGAMECHASE.instance.fail()                               # 全局管理器里触发失败
 		
 		
 var patrol_points: Array[Vector2]

@@ -11,6 +11,8 @@ static var instance: POPUP
 
 var currentText: String
 
+signal closed
+
 func _ready() -> void:
 	instance = self
 	visible = false
@@ -31,6 +33,7 @@ func close() -> void:
 	if pause_on_open:
 		get_tree().paused = false
 	visible = false
+	emit_signal("closed")
 
 func update_text(string: String):
 	currentText = string

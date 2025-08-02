@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cwgddj4xigwm5"]
+[gd_scene load_steps=12 format=4 uid="uid://cwgddj4xigwm5"]
 
 [ext_resource type="TileSet" uid="uid://d2m8ksahygnpc" path="res://loop/Tileset_Roombuild.tres" id="1_22a7a"]
 [ext_resource type="Script" uid="uid://36dswio763rn" path="res://loop/loop_main_1217pm.gd" id="1_yqg21"]
@@ -7,12 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="4_yt6ow"]
 [ext_resource type="PackedScene" uid="uid://bgr5ppav0ajjf" path="res://loop/characters/colleague 3.tscn" id="5_bd70e"]
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_bc0wx"]
+[ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="8_bd70e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqg21"]
 size = Vector2(107, 26)
+
+[sub_resource type="Curve2D" id="Curve2D_4wvik"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 536, 128, 0, 0, 0, 0, 392, 96, 0, 0, 0, 0, 256, 144, 0, 0, 0, 0, 112, 104, 0, 0, 0, 0, 40, 216, 0, 0, 0, 0, 112, 296, 0, 0, 0, 0, 200, 264, 0, 0, 0, 0, 336, 296, 0, 0, 0, 0, 360, 464, 0, 0, 0, 0, 432, 472, 0, 0, 0, 0, 488, 416, 0, 0, 0, 0, 624, 432, 0, 0, 0, 0, 640, 288, 0, 0, 0, 0, 560, 232, 0, 0, 0, 0, 328, 312, 0, 0, 0, 0, 320, 464, 0, 0, 0, 0, 248, 416, 0, 0, 0, 0, 104, 464, 0, 0, 0, 0, 40, 368, 0, 0, 0, 0, 96, 232, 0, 0, 0, 0, 128, 128, 0, 0, 0, 0, 336, 144, 0, 0, 0, 0, 472, 120, 0, 0, 0, 0, 584, 208, 0, 0, 0, 0, 584, 304, 0, 0, 0, 0, 536, 128)
+}
+point_count = 26
 
 [node name="Loop_main_1217pm2" type="Node2D"]
 script = ExtResource("1_yqg21")
@@ -79,3 +86,10 @@ position = Vector2(207, 106)
 text = "08:00"
 speed_factor = 500
 start_seconds = 28800.0
+
+[node name="Loop-boss" parent="." instance=ExtResource("8_bd70e")]
+position = Vector2(608, 136)
+patrol_path = NodePath("../Path2D")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4wvik")

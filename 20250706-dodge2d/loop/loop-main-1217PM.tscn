@@ -33,7 +33,7 @@ tile_map_data = PackedByteArray("AAALAA0AAAACABEAAAALAA4AAAACABIAAAALAA8AAAACABM
 tile_set = ExtResource("1_22a7a")
 
 [node name="Loop-player" parent="Static" instance=ExtResource("4_yt6ow")]
-position = Vector2(204, 123)
+position = Vector2(207, 106)
 
 [node name="Day1" type="Node2D" parent="."]
 

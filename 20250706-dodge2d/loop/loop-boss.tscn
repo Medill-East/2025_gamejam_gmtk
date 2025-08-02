@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_duqep"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3yhno"]
-points = PackedVector2Array(-1.4, -7.345, -64.07, -24.34, -63.865, 24.51)
+points = PackedVector2Array(0, 0, -128, -64, -160, 0, -128, 64)
 
 [node name="Loop-boss" type="CharacterBody2D"]
 script = ExtResource("1_fpcte")
+ray_count = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.382905, 0.382905)

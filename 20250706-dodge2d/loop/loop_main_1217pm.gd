@@ -8,6 +8,7 @@ var popup05 := preload("res://loop/popups/Dialogue/Dialogue_T05.tscn").instantia
 var popup06 := preload("res://loop/popups/Dialogue/Dialogue_T06.tscn").instantiate()
 var popup07 := preload("res://loop/popups/Dialogue/Dialogue_T07.tscn").instantiate()
 var popup08 := preload("res://loop/popups/Dialogue/Dialogue_T08.tscn").instantiate()
+var popupeod := preload("res://loop/popups/popup-eod.tscn").instantiate()
 
 @onready var clocklabel = $"Loop-clock"
 @onready var boss: = $"Loop-boss"
@@ -26,6 +27,7 @@ func _ready() -> void:
 	await _wait_hour(9)
 	await popup03.closed
 	adjust_boss(true)
+	await _wait_hour(20)
 
 func _wait_hour(target: int):
 	while true:
@@ -34,6 +36,8 @@ func _wait_hour(target: int):
 		if hour == target:
 			if target == 9:
 				_popup03()
+			if target == 10:
+				_popupeod()
 			break                                     # 满足→退出函数执行一次
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,3 +71,9 @@ func _popup03():
 	print("popup03")
 	add_child(popup03)
 	popup03.open()        # 打开&暂停	
+
+func _popupeod():
+	print("popupeod")
+	add_child(popupeod)
+	popupeod.update_score("1","10","40")
+	popupeod.open()        # 打开&暂停	

@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://oqj16e75x2c5"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_wda3j"]
+[ext_resource type="Texture2D" uid="uid://ccdp1o3rvglqh" path="res://UI/UI_DestructionCount.png" id="2_7g8nk"]
+[ext_resource type="Script" uid="uid://p3rvoj5k0mcs" path="res://loop/popups/popup_eod.gd" id="2_8q77h"]
+
+[node name="Popup-eod" instance=ExtResource("1_wda3j")]
+script = ExtResource("2_8q77h")
+
+[node name="UiDestructionCount" type="Sprite2D" parent="Panel" index="0"]
+position = Vector2(288, 176)
+scale = Vector2(0.382023, 0.290645)
+texture = ExtResource("2_7g8nk")
+
+[node name="Day" type="RichTextLabel" parent="Panel" index="1"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 74.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "1"
+fit_content = true
+
+[node name="RequiredDestruction" type="RichTextLabel" parent="Panel" index="2"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 162.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "1"
+fit_content = true
+
+[node name="Total Destruction" type="RichTextLabel" parent="Panel" index="3"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 176.0
+offset_right = 408.0
+offset_bottom = 218.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "1"
+fit_content = true
+
+[node name="Narrator" parent="Panel" index="4"]
+visible = false
+
+[node name="Eric name" parent="Panel" index="5"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="6"]
+visible = false
+
+[node name="Eric name2" parent="Panel" index="7"]
+visible = false
+
+[node name="Guest dialogue" parent="Panel" index="8"]
+visible = false
+offset_left = 424.0
+offset_top = 120.0
+offset_right = 464.0
+offset_bottom = 162.0
+theme_override_font_sizes/normal_font_size = 30
+text = "1"
+fit_content = true
+
+[node name="Eric" parent="." index="1"]
+visible = false

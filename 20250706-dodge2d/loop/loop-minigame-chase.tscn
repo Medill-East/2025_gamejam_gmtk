@@ -32,14 +32,8 @@ scale = Vector2(1, 24)
 [node name="Loop-minigame-chase-enemy" parent="." node_paths=PackedStringArray("minigame_chase_player", "trail_root") instance=ExtResource("3_e62qw")]
 position = Vector2(760, 288)
 speed = 150.0
-drop_period = null
-block_scene = null
 minigame_chase_player = NodePath("../Loop-minigame-chase-player2")
 trail_root = NodePath("../TrailRoot")
-move_speed = null
-fov_angle = null
-fov_range = null
-ray_count = null
 
 [node name="Loop-minigame-chase-trailblock" parent="." instance=ExtResource("4_fcs84")]
 position = Vector2(568, 328)

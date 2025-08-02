@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpvfoyjdrg1y1"]
+[gd_scene load_steps=4 format=3 uid="uid://dpvfoyjdrg1y1"]
 
-[ext_resource type="Script" uid="uid://gb6ajlvk56o5" path="res://loop/popup.gd" id="1_uw0fe"]
+[ext_resource type="Script" uid="uid://gb6ajlvk56o5" path="res://loop/popups/popup.gd" id="1_uw0fe"]
 [ext_resource type="Texture2D" uid="uid://d0iyd3nkus2e6" path="res://art/enemySwimming_1.png" id="2_ancin"]
-[ext_resource type="Texture2D" uid="uid://dedipp2d2qasm" path="res://UI/Dialogue_player_select.png" id="2_vjut1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38d60"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.694118, 0.729412, 0.784314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="Popup" type="CanvasLayer" node_paths=PackedStringArray("_label", "_panel", "_btn")]
 process_mode = 3
@@ -14,18 +17,14 @@ _label = NodePath("Panel/Text")
 _panel = NodePath("Panel")
 _btn = NodePath("Panel/CloseButton")
 
-[node name="DialoguePlayerSelect" type="Sprite2D" parent="."]
-position = Vector2(640, 440)
-texture = ExtResource("2_vjut1")
-
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 448.0
-offset_top = 192.0
-offset_right = -416.0
-offset_bottom = -192.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -60.0
+offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_38d60")
@@ -36,17 +35,19 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
+offset_left = 16.0
 offset_top = -144.0
-offset_right = -40.0
+offset_right = -16.0
 offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "test text"
+text = "Eric is trapped in the soul-sucking loop of office drudgery.
+If he can stir up enough chaos, maybe—just maybe— the boss will shut the place down for a nice, long vacation.
+…And Eric isn’t the only one who’d love some time off…"
 fit_content = true
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CloseButton" type="TextureButton" parent="Panel"]

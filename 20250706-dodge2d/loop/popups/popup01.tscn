@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxans32alp1y0"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_1sjgk"]
+[ext_resource type="PackedScene" uid="uid://cobo6j7grmsj3" path="res://loop/characters/Eric.tscn" id="2_rgaho"]
+
+[node name="Popup01" instance=ExtResource("1_1sjgk")]
+
+[node name="Charater" parent="Panel" index="2" instance=ExtResource("2_rgaho")]
+position = Vector2(32, 328)
+scale = Vector2(1, 1)

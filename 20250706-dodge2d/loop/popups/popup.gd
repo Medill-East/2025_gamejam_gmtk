@@ -14,11 +14,11 @@ var currentText: String
 func _ready() -> void:
 	instance = self
 	visible = false
-	_label.text = default_text
+	currentText = _label.text
 
 	_panel.gui_input.connect(_on_panel_input)
 	_btn.pressed.connect(close)
-	currentText = "Do your job!"
+	#currentText = "Do your job!"
 
 # -------- 公共接口 --------
 func open() -> void:

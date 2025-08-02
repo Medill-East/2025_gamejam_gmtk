@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpvfoyjdrg1y1"]
+[gd_scene load_steps=5 format=3 uid="uid://dpvfoyjdrg1y1"]
 
 [ext_resource type="Script" uid="uid://gb6ajlvk56o5" path="res://loop/popup.gd" id="1_uw0fe"]
 [ext_resource type="Texture2D" uid="uid://d0iyd3nkus2e6" path="res://art/enemySwimming_1.png" id="2_ancin"]
+[ext_resource type="Texture2D" uid="uid://dedipp2d2qasm" path="res://UI/Dialogue_player_select.png" id="2_vjut1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38d60"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Popup" type="CanvasLayer" node_paths=PackedStringArray("_label", "_panel", "_btn")]
 process_mode = 3
@@ -10,12 +14,21 @@ _label = NodePath("Panel/Text")
 _panel = NodePath("Panel")
 _btn = NodePath("Panel/CloseButton")
 
+[node name="DialoguePlayerSelect" type="Sprite2D" parent="."]
+position = Vector2(640, 440)
+texture = ExtResource("2_vjut1")
+
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 448.0
+offset_top = 192.0
+offset_right = -416.0
+offset_bottom = -192.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_38d60")
 
 [node name="Text" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
@@ -23,17 +36,21 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+offset_top = -144.0
+offset_right = -40.0
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "test text"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CloseButton" type="TextureButton" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

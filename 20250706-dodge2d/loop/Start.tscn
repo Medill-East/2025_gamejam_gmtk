@@ -16,20 +16,20 @@ script = ExtResource("1_ohxc3")
 
 [node name="background" type="Sprite2D" parent="."]
 modulate = Color(0.76, 0.76, 0.76, 0.831373)
-position = Vector2(480, 304)
-scale = Vector2(0.9, 0.9)
+position = Vector2(348.706, 256)
+scale = Vector2(0.77521, 0.764706)
 texture = ExtResource("1_xgkyd")
 region_enabled = true
 region_rect = Rect2(0, 0, 896, 680)
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(480, 160)
+position = Vector2(352, 104)
 texture = ExtResource("1_0x54d")
 region_enabled = true
 region_rect = Rect2(48, 56, 600, 64)
 
 [node name="New Game" type="Sprite2D" parent="."]
-position = Vector2(475, 286)
+position = Vector2(352, 256)
 texture = ExtResource("1_7hwxd")
 region_enabled = true
 region_rect = Rect2(440, 90, 230, 60)
@@ -40,9 +40,10 @@ offset_left = -115.0
 offset_top = -30.0
 offset_right = 115.0
 offset_bottom = 30.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Sprite2D" parent="."]
-position = Vector2(475, 366)
+position = Vector2(352, 344)
 texture = ExtResource("1_7hwxd")
 region_enabled = true
 region_rect = Rect2(495, 345, 120, 55)
@@ -53,6 +54,7 @@ offset_left = -59.0
 offset_top = -27.0
 offset_right = 60.0
 offset_bottom = 26.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="New Game/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Exit/ExitButton" to="." method="_on_exit_button_pressed"]

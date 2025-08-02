@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ger46k0q38jv"]
 
-[ext_resource type="Texture2D" uid="uid://bgfmeu6btbu2s" path="res://art/enemyFlyingAlt_2.png" id="1_yqstq"]
+[ext_resource type="Texture2D" uid="uid://dgi01j74ons4j" path="res://art/Loop/Assets/enemies.png" id="1_yqstq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqstq"]
 size = Vector2(16, 32)
@@ -8,8 +8,10 @@ size = Vector2(16, 32)
 [node name="Loop-minigame-chase-trailblock" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.277778, 0.236559)
+scale = Vector2(1.48586, 1.48586)
 texture = ExtResource("1_yqstq")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 14)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 8

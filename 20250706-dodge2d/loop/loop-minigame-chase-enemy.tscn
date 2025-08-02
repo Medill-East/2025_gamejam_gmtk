@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="1_buuxs"]
 [ext_resource type="Script" uid="uid://856svuuuqcel" path="res://loop/loop_minigame_chase_enemy.gd" id="2_blnlr"]
-[ext_resource type="Texture2D" uid="uid://d0iyd3nkus2e6" path="res://art/enemySwimming_1.png" id="2_tt8gu"]
+[ext_resource type="Texture2D" uid="uid://dgi01j74ons4j" path="res://art/Loop/Assets/enemies.png" id="3_blnlr"]
 
 [node name="Loop-minigame-chase-enemy" instance=ExtResource("1_buuxs")]
 collision_layer = 8
@@ -21,6 +21,8 @@ visible = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="3" groups=["trail"]]
 position = Vector2(1.19209e-07, 0)
-rotation = 3.14159
-scale = Vector2(0.297022, 0.280584)
-texture = ExtResource("2_tt8gu")
+rotation = 4.72522
+scale = Vector2(2.31313, 2.31313)
+texture = ExtResource("3_blnlr")
+region_enabled = true
+region_rect = Rect2(31, 0, 13, 14)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://crf0285cs5qao"]
+
+[ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_cr67m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1aaph"]
+load_path = "res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-728f96cef55c4b8ce36ded4df9bec06c.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o08c1"]
+radius = 12.3087
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d67tg"]
+size = Vector2(30, 34)
+
+[node name="Item" instance=ExtResource("1_cr67m")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("CompressedTexture2D_1aaph")
+region_rect = Rect2(352, 610, 31, 17)
+
+[node name="CollisionShape2D" parent="Detect" index="0"]
+shape = SubResource("CircleShape2D_o08c1")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = false
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_d67tg")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://og7yttj4x5t5"]
+
+[ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_2toyh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jeyrx"]
+load_path = "res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-728f96cef55c4b8ce36ded4df9bec06c.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvmsj"]
+radius = 10.7703
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84nod"]
+size = Vector2(24, 30)
+
+[node name="Item" instance=ExtResource("1_2toyh")]
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+texture = SubResource("CompressedTexture2D_jeyrx")
+region_rect = Rect2(132, 330, 24, 46)
+
+[node name="left" type="Sprite2D" parent="." index="1"]
+position = Vector2(-16, 0)
+texture = SubResource("CompressedTexture2D_jeyrx")
+offset = Vector2(16, 0)
+region_enabled = true
+region_rect = Rect2(164, 330, 24, 46)
+
+[node name="back" type="Sprite2D" parent="." index="2"]
+visible = false
+position = Vector2(-16, 0)
+texture = SubResource("CompressedTexture2D_jeyrx")
+offset = Vector2(16, 0)
+region_enabled = true
+region_rect = Rect2(32, 334, 32, 46)
+
+[node name="CollisionShape2D" parent="Detect" index="0"]
+shape = SubResource("CircleShape2D_bvmsj")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_84nod")

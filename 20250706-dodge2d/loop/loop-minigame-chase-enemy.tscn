@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm17yl36fb4yd"]
+
+[ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="1_buuxs"]
+[ext_resource type="Script" uid="uid://856svuuuqcel" path="res://loop/loop_minigame_chase_enemy.gd" id="2_blnlr"]
+[ext_resource type="Texture2D" uid="uid://d0iyd3nkus2e6" path="res://art/enemySwimming_1.png" id="2_tt8gu"]
+[ext_resource type="PackedScene" uid="uid://ger46k0q38jv" path="res://loop/loop-minigame-chase-trailblock.tscn" id="3_2ulh8"]
+
+[node name="Loop-minigame-chase-enemy" instance=ExtResource("1_buuxs")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("2_blnlr")
+speed = 120.0
+drop_period = 0.25
+block_scene = ExtResource("3_2ulh8")
+ray_count = 4
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="3" groups=["trail"]]
+position = Vector2(1.19209e-07, 0)
+rotation = 3.14159
+scale = Vector2(0.297022, 0.280584)
+texture = ExtResource("2_tt8gu")

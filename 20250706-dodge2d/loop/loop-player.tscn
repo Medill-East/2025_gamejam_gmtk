@@ -8,7 +8,7 @@ size = Vector2(9.66667, 6)
 
 [node name="Loop-player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 20
 script = ExtResource("1_6s5li")
 follow_speed = 10.0
 max_speed = 100.0

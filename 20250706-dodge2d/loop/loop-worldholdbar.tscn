@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://behpn4nyl13ne"]
+[gd_scene format=3 uid="uid://behpn4nyl13ne"]
 
 [node name="Loop-worldholdbar" type="Control"]
 visible = false

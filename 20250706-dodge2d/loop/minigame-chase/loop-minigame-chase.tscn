@@ -8,6 +8,7 @@
 
 [node name="Loop-minigame-chase" type="Node2D"]
 script = ExtResource("1_a0d8f")
+START_TIME = 10.0
 
 [node name="TrailRoot" type="Node2D" parent="."]
 
@@ -31,7 +32,7 @@ scale = Vector2(1, 24)
 
 [node name="Loop-minigame-chase-enemy" parent="." node_paths=PackedStringArray("minigame_chase_player", "trail_root") instance=ExtResource("3_e62qw")]
 position = Vector2(616, 424)
-speed = 150.0
+speed = 100.0
 minigame_chase_player = NodePath("../Loop-minigame-chase-player2")
 trail_root = NodePath("../TrailRoot")
 
@@ -40,7 +41,7 @@ position = Vector2(568, 328)
 
 [node name="Loop-minigame-chase-player2" parent="." instance=ExtResource("4_a0d8f")]
 position = Vector2(512, 280)
-max_speed = 300.0
+max_speed = 250.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

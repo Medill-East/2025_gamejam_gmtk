@@ -16,8 +16,8 @@ var popup18 := preload("res://loop/popups/Dialogue/Dialogue_T18.tscn").instantia
 var break_sfx := preload("res://SFX/destruction-normal.wav")
 var bonus_sfx := preload("res://SFX/destruction-bonus.ogg")
 
-@export var required_score_day1:int = 3
-@export var required_score_day2:int = 30
+@export var required_score_day1:int = 300
+@export var required_score_day2:int = 500
 
 var points := 0
 var health := 3

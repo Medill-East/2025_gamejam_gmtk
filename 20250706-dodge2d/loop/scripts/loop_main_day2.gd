@@ -33,7 +33,7 @@ func _ready() -> void:
 	_popup06()
 	await popup06.closed
 	_popupD2()
-	await _wait_hour(12)
+	await _wait_hour(10)
 	adjust_boss(true)
 	
 	await _wait_hour(22)

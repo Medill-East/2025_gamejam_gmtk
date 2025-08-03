@@ -12,7 +12,7 @@ radius = 12.3087
 size = Vector2(30, 34)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cr67m"]
-points = PackedVector2Array(-8, 0, -128, -64, -160, 0, -128, 64)
+points = PackedVector2Array(-8, 0, -182.851, -60.7078, -207.349, 8.8614, -178.277, 75.2153)
 
 [node name="camera-1" instance=ExtResource("1_cr67m")]
 item_type = "camera"
@@ -40,5 +40,5 @@ collision_mask = 2
 shape = SubResource("ConvexPolygonShape2D_cr67m")
 
 [node name="Polygon2D" type="Polygon2D" parent="VisionArea" index="1"]
-color = Color(1, 0.25, 0.25, 0.6)
-polygon = PackedVector2Array(0, 0, -128, -64, -160, 0, -128, 64)
+color = Color(1, 0.25, 0.25, 0.235294)
+polygon = PackedVector2Array(0, 0, -182.851, -60.7078, -207.349, 8.8614, -178.277, 75.2153)

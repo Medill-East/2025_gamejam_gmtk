@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds6fdwva5scmc"]
 
-[ext_resource type="Script" uid="uid://v1lpy7mrnigh" path="res://loop/loop_boss.gd" id="1_fpcte"]
+[ext_resource type="Script" uid="uid://v1lpy7mrnigh" path="res://loop/scripts/loop_boss.gd" id="1_fpcte"]
 [ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_duqep"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3yhno"]

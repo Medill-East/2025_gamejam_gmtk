@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://he7677v7mthk" path="res://UI/game title.png" id="1_0x54d"]
 [ext_resource type="Texture2D" uid="uid://bjpxjm8xquiw4" path="res://UI/pixel kit UI.png" id="1_7hwxd"]
-[ext_resource type="Script" uid="uid://bcuevk6ocf4sl" path="res://loop/start.gd" id="1_ohxc3"]
+[ext_resource type="Script" uid="uid://bcuevk6ocf4sl" path="res://loop/scripts/start.gd" id="1_ohxc3"]
 [ext_resource type="Texture2D" uid="uid://ytwy1pxowohx" path="res://UI/game title - background.png" id="1_xgkyd"]
 
 [node name="Start" type="Control"]

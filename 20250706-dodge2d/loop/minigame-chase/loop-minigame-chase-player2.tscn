@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://yli23frp1h8d"]
 
-[ext_resource type="Script" uid="uid://bkhtsq7o7kp1q" path="res://loop/loop_minigame_chase_player_2.gd" id="1_0hg5n"]
+[ext_resource type="Script" uid="uid://bkhtsq7o7kp1q" path="res://loop/scripts/loop_minigame_chase_player_2.gd" id="1_0hg5n"]
 [ext_resource type="Texture2D" uid="uid://b0dffa1s8ykvp" path="res://art/Loop/Assets/player.png" id="2_0hg5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj3oj"]

@@ -18,8 +18,8 @@ config/icon="res://scenes/icon.svg"
 [autoload]
 
 MusicPlayer="*res://music_player.tscn"
-AUTOLOAD_LoopGameGD="*res://loop/loop_game.gd"
-AUTOLOAD_SCORE="*res://loop/Score.gd"
+AUTOLOAD_LoopGameGD="*res://loop/scripts/loop_game.gd"
+AUTOLOAD_SCORE="*res://loop/scripts/Score.gd"
 
 [display]
 

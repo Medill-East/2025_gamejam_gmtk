@@ -24,3 +24,6 @@ scale = Vector2(2.31313, 2.31313)
 texture = ExtResource("3_blnlr")
 region_enabled = true
 region_rect = Rect2(31, 0, 13, 14)
+
+[node name="Polygon2D" parent="." index="4"]
+polygon = PackedVector2Array(0, 0, -128, -64, -160, 0, -128, 64)

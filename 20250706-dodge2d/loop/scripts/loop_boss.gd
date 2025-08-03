@@ -21,11 +21,13 @@ var THRESH := 10 # 像素/秒
 
 func _ready():
 	var path: Path2D = get_node(patrol_path)
-	patrol_points = []
+	patrol_points.clear()
 	var curve := path.curve
-	var point_count := curve.point_count
-	for i in point_count:
-		patrol_points.append(curve.get_point_position(i))
+
+	for i in curve.point_count:
+		var local_p  : Vector2 = curve.get_point_position(i)
+		var global_p : Vector2 = path.to_global(local_p)   # ← 关键
+		patrol_points.append(global_p)
 		
 	_vision_area.body_entered.connect(_on_player_spotted)
 	#_init_vision_shape()

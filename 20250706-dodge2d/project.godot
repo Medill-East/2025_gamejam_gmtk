@@ -19,6 +19,7 @@ config/icon="res://scenes/icon.svg"
 
 MusicPlayer="*res://music_player.tscn"
 AUTOLOAD_LoopGameGD="*res://loop/loop_game.gd"
+AUTOLOAD_SCORE="*res://loop/Score.gd"
 
 [display]
 

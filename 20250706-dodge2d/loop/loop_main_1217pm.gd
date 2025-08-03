@@ -53,7 +53,6 @@ func adjust_boss(status: bool):
 	boss.set_process(status)
 	boss.set_physics_process(status)
 	
-
 func _on_hour_tick(h):
 	print("Ding！ %02d:00" % h)
 

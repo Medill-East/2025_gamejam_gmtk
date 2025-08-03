@@ -5,6 +5,8 @@ signal hover_start(interactable)
 signal hover_end(interactable)
 var isHovering: bool = false
 
+@export var item_score:= 1
+
 @export var hold_threshold := 0.8      # 长按秒数
 @export var highlight_mode := 0        # 0=shader, 1=sprite
 @export var interact_text  := "长按 E 交互"  # 可用于 UI 提示
@@ -101,6 +103,7 @@ func _do_interact() -> void:
 	# 例如：queue_free()  # 播完动画后销毁
 	queue_free()  # 播完动画后销毁
 	bar2d.visible = false            # 交互完成后可隐藏或 queue_free()
+	AUTOLOAD_SCORE.add(item_score)
 
 # 方便外部直接拿 0~1 的进度
 func get_ratio() -> float:

@@ -19,6 +19,7 @@ var currentText: String
 signal closed
 
 func _ready() -> void:
+	$MusicManager.play_music(load("res://Music/End-of-the-day.ogg"))
 	instance = self
 	visible = false
 	currentText = _label.text

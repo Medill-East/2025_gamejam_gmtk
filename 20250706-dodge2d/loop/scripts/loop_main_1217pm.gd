@@ -15,8 +15,12 @@ var popupeod := preload("res://loop/popups/popup-eod.tscn").instantiate()
 
 var current_hour
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	$MusicManager.play_music(load("res://Music/Office-daytime.ogg"))
+	
 	AUTOLOAD_SCORE.health = 3
 	AUTOLOAD_SCORE.points = 0
 	$"Loop-caught-label".text = str(AUTOLOAD_SCORE.health)

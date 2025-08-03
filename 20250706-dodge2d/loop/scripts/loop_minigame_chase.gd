@@ -12,6 +12,7 @@ var time_left := 0.0
 var running := true                  # 用于暂停逻辑
 
 func _ready():
+	$MusicManager.play_music(load("res://Music/mini-game 1.ogg"))
 	instance = self
 	_reset_game()
 

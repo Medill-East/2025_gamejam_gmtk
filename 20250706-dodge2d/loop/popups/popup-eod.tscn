@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://oqj16e75x2c5"]
+[gd_scene load_steps=7 format=3 uid="uid://oqj16e75x2c5"]
 
 [ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_wda3j"]
 [ext_resource type="Texture2D" uid="uid://ccdp1o3rvglqh" path="res://UI/UI_DestructionCount.png" id="2_7g8nk"]
 [ext_resource type="Script" uid="uid://p3rvoj5k0mcs" path="res://loop/popups/popup_eod.gd" id="2_8q77h"]
 [ext_resource type="Texture2D" uid="uid://dre1dghw8b7da" path="res://UI/UI_FailScreen_new.png" id="4_rhgil"]
 [ext_resource type="Texture2D" uid="uid://cfy4xbberbb4" path="res://UI/UI_WinScreen_new.png" id="5_h3ciu"]
+[ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="6_h3ciu"]
 
 [node name="Popup-eod" instance=ExtResource("1_wda3j")]
 script = ExtResource("2_8q77h")
@@ -84,3 +85,5 @@ fit_content = true
 
 [node name="Eric" parent="." index="1"]
 visible = false
+
+[node name="MusicManager" parent="." index="2" instance=ExtResource("6_h3ciu")]

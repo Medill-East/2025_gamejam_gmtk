@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://doy3peyh5hklh"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_o78bg"]
+[ext_resource type="PackedScene" uid="uid://2hpy3y7c0exn" path="res://loop/characters/chair-dialogue.tscn" id="2_o78bg"]
+
+[node name="Popup" instance=ExtResource("1_o78bg")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 448.0
+offset_right = 584.0
+scale = Vector2(1, 1.00977)
+text = "Chair"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 176.0
+text = "You breaking the cycle? I support that... and also most of upper management."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_o78bg")]
+scale = Vector2(2.05675, 2.05675)

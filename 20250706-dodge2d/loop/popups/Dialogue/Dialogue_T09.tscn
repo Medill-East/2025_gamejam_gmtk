@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://biux134l75mmh"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_y1e2a"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="2_hasch"]
+
+[node name="Popup" instance=ExtResource("1_y1e2a")]
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_hasch")]
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)

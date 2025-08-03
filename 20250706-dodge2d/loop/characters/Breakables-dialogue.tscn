@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://oaxp3ucx121s"]
+
+[ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="1_g7v31"]
+
+[node name="Breakables-dialogue" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g7v31")
+region_enabled = true
+region_rect = Rect2(192, 328, 32, 36)

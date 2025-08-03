@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5dgd5n8gqqlp"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_rodpq"]
+[ext_resource type="PackedScene" uid="uid://clegbbusuvde0" path="res://loop/characters/telephone-dialogue.tscn" id="2_rodpq"]
+
+[node name="Popup" instance=ExtResource("1_rodpq")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 416.0
+offset_right = 552.0
+scale = Vector2(1, 1.00977)
+text = "Telephone"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 208.0
+offset_right = 512.0
+text = "Tell him the only thing 'ringing' is my burnout alarm."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_rodpq")]
+scale = Vector2(2.92479, 2.92479)

@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://cko6frsahyrt3"]
 
-[ext_resource type="Script" uid="uid://bcuevk6ocf4sl" path="res://loop/scripts/start.gd" id="1_hd4lx"]
+[ext_resource type="Script" uid="uid://cn8hav5dauuvc" path="res://loop/loop-night.gd" id="1_c0s0j"]
 [ext_resource type="Texture2D" uid="uid://c0gvv2c7ro0h" path="res://UI/OutofOffice.png" id="2_wydxm"]
 [ext_resource type="PackedScene" uid="uid://cpwr52y2m47mp" path="res://loop/popups/Dialogue/Dialogue_T04.tscn" id="3_c0s0j"]
 
-[node name="Start" type="Control"]
+[node name="loop-night" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hd4lx")
+script = ExtResource("1_c0s0j")
 
 [node name="background2" type="Sprite2D" parent="."]
 modulate = Color(0.76, 0.76, 0.76, 0.831373)
@@ -22,3 +22,15 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 324)
 
 [node name="Popup" parent="." instance=ExtResource("3_c0s0j")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.196078)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

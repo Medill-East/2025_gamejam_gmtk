@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xp6r8tv81o05"]
+
+[ext_resource type="Script" uid="uid://dt13nvmsxfkid" path="res://loop/scripts/loop_score_label.gd" id="1_o2i8s"]
+
+[node name="Loop-score-label" type="Label"]
+theme_override_colors/font_color = Color(0.992157, 0.756863, 0.00392157, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
+script = ExtResource("1_o2i8s")

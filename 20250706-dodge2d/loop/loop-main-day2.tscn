@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://gru41y0i8tqm"]
+[gd_scene load_steps=18 format=4 uid="uid://gru41y0i8tqm"]
 
 [ext_resource type="Script" uid="uid://upufu7t86k75" path="res://loop/scripts/loop_main_day2.gd" id="1_nxrk7"]
 [ext_resource type="TileSet" uid="uid://d2m8ksahygnpc" path="res://loop/Tileset_Roombuild.tres" id="2_7lwn2"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c1frbibcy118n" path="res://art/Loop/3_Modern_Office_Shadowless/Modern_Office_Shadowless_32x32.png" id="5_pii04"]
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="6_3ya0u"]
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_8kojw"]
-[ext_resource type="PackedScene" uid="uid://jb7g14eoa1gf" path="res://loop/loop-score-label.tscn" id="7_pii04"]
+[ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-caught-label.tscn" id="7_pii04"]
 [ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="8_7lwn2"]
+[ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-score-label2.tscn" id="10_gn74h"]
+[ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="11_wv1ux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)
@@ -34,7 +36,13 @@ _data = {
 }
 point_count = 6
 
-[node name="Loop_main_1217pm" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_3ya0u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -8, -32, 0, 0, 0, 0, -24, -96, 0, 0, 0, 0, -88, -136, 0, 0, 0, 0, -192, -144, 0, 0, 0, 0, -264, -120, 0, 0, 0, 0, -312, -88, 0, 0, 0, 0, -368, -104, 0, 0, 0, 0, -456, -112, 0, 0, 0, 0, -504, -56, 0, 0, 0, 0, -528, 24, 0, 0, 0, 0, -528, 96, 0, 0, 0, 0, -544, 128, 0, 0, 0, 0, -520, 176, 0, 0, 0, 0, -504, 216, 0, 0, 0, 0, -432, 200, 0, 0, 0, 0, -392, 224, 0, 0, 0, 0, -352, 248, 0, 0, 0, 0, -288, 232, 0, 0, 0, 0, -216, 208, 0, 0, 0, 0, -160, 240, 0, 0, 0, 0, -128, 232, 0, 0, 0, 0, -64, 208, 0, 0, 0, 0, -16, 192, 0, 0, 0, 0, 16, 144, 0, 0, 0, 0, -16, 88, 0, 0, 0, 0, -56, 64, 0, 0, 0, 0, -128, 40, 0, 0, 0, 0, -200, 56, 0, 0, 0, 0, -248, 64, 0, 0, 0, 0, -280, 56, 0, 0, 0, 0, -344, 72, 0, 0, 0, 0, -392, 48, 0, 0, 0, 0, -416, 56, 0, 0, 0, 0, -448, 48, 0, 0, 0, 0, -504, 48, 0, 0, 0, 0, -520, -40, 0, 0, 0, 0, -520, -80, 0, 0, 0, 0, -480, -80, 0, 0, 0, 0, -448, -136, 0, 0, 0, 0, -376, -136, 0, 0, 0, 0, -312, -96, 0, 0, 0, 0, -256, -88, 0, 0, 0, 0, -240, -136, 0, 0, 0, 0, -176, -120, 0, 0, 0, 0, -144, -40, 0, 0, 0, 0, -152, 32, 0, 0, 0, 0, -32, 48, 0, 0, 0, 0, -8, -32)
+}
+point_count = 48
+
+[node name="Loop_main_day2" type="Node2D"]
 script = ExtResource("1_nxrk7")
 
 [node name="Static" type="Node2D" parent="."]
@@ -130,11 +138,23 @@ speed_factor = 200
 start_seconds = 28800.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Loop-score-label" parent="." instance=ExtResource("7_pii04")]
-visible = false
-offset_left = 688.0
-offset_top = -1.0
-offset_right = 698.0
-offset_bottom = 22.0
-
 [node name="MusicManager" parent="." instance=ExtResource("8_7lwn2")]
+
+[node name="Loop-boss" parent="." instance=ExtResource("11_wv1ux")]
+position = Vector2(616, 224)
+patrol_path = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Loop-boss"]
+curve = SubResource("Curve2D_3ya0u")
+
+[node name="Loop-caught-label" parent="." instance=ExtResource("7_pii04")]
+offset_left = 16.0
+offset_top = 405.0
+offset_right = 33.0
+offset_bottom = 447.0
+
+[node name="Loop-score-label" parent="." instance=ExtResource("10_gn74h")]
+offset_left = 16.0
+offset_top = 437.0
+offset_right = 33.0
+offset_bottom = 479.0

@@ -4,6 +4,7 @@ class_name MINIGAME_CHASE
 static var instance: MINIGAME_CHASE
 
 var timerParent := preload("res://loop/minigame-chase/loop-minigame-chase.tscn")
+var popup05 := preload("res://loop/popups/Dialogue/Dialogue_T05.tscn").instantiate()
 
 @onready var timer: = $CanvasLayer/Label
 
@@ -37,10 +38,17 @@ func _process(delta):
 func fail():
 	get_tree().paused = true
 	#HUD.instance.show_fail_label("GAME OVER！")
-	AUTOLOAD_POPUP.update_text("CHASED!")
-	AUTOLOAD_POPUP.open()
+	#AUTOLOAD_POPUP.update_text("CHASED!")
+	#AUTOLOAD_POPUP.open()
+	_popup05()
 
 func win():
 	running = false
-	AUTOLOAD_POPUP.instance.update_text("YOU WIN!")
-	AUTOLOAD_POPUP.instance.open()
+	#AUTOLOAD_POPUP.instance.update_text("YOU WIN!")
+	#AUTOLOAD_POPUP.instance.open()
+	get_tree().change_scene_to_file("res://loop/loop-main-day2.tscn")
+
+func _popup05():
+	print("popup05")
+	add_child(popup05)
+	popup05.open()        # 打开&暂停	

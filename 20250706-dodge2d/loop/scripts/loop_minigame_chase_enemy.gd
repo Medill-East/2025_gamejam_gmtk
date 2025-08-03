@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed       := 120.0
 @export var drop_period := 0.25        # 每 0.25 秒留一次块
-@export var block_scene := preload("res://loop/loop-minigame-chase-trailblock.tscn")
+@export var block_scene := preload("res://loop/minigame-chase/loop-minigame-chase-trailblock.tscn")
 
 @export var minigame_chase_player: MINI_CHASE_PLAYER
 @export var trail_root: Node2D

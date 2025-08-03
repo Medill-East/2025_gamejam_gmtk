@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdr03mrwxxovp"]
+
+[ext_resource type="Script" uid="uid://djdo8qqi44i44" path="res://loop/popups/popup_minigame_chase.gd" id="1_g8uw7"]
+[ext_resource type="PackedScene" uid="uid://4e1p82701x1y" path="res://loop/characters/Eric-dialogue.tscn" id="2_g8uw7"]
+[ext_resource type="PackedScene" uid="uid://b2sknk0gilf46" path="res://loop/characters/security-dialogue.tscn" id="3_g8uw7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38d60"]
+bg_color = Color(0.694118, 0.729412, 0.784314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Popup-minigame-chase" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_g8uw7")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 80.0
+offset_right = -60.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_38d60")
+
+[node name="Narrator" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 29.0
+offset_top = -131.0
+offset_right = -64.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "Got You!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eric name" type="RichTextLabel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 200.0
+offset_right = 152.0
+offset_bottom = 240.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Eric"
+vertical_alignment = 2
+
+[node name="Eric dialogue" type="RichTextLabel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 240.0
+offset_right = 448.0
+offset_bottom = 304.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "abc"
+
+[node name="Eric name2" type="RichTextLabel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Guest"
+vertical_alignment = 2
+
+[node name="Guest dialogue" type="RichTextLabel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 472.0
+offset_bottom = 112.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "abc"
+
+[node name="CloseButton" type="Button" parent="Panel"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -576.0
+offset_bottom = 354.0
+grow_horizontal = 0
+action_mode = 0
+
+[node name="Eric" parent="." instance=ExtResource("2_g8uw7")]
+visible = false
+position = Vector2(96, 389)
+scale = Vector2(1.2, 1.2)
+
+[node name="Charater" parent="." instance=ExtResource("3_g8uw7")]
+position = Vector2(600, 128)
+scale = Vector2(1.2, 1.2)
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]

@@ -37,7 +37,7 @@ func _ready() -> void:
 	await popup02.closed
 	#print("popup02closed")
 	_popupD1()
-	await _wait_hour(9)
+	await _wait_hour(15)
 	await popup03.closed
 	adjust_boss(true)
 	
@@ -53,7 +53,7 @@ func _wait_hour(target: int):
 		var hour : int = await clocklabel.hour_tick   # 等下一次整点
 		#print(hour)
 		if hour == target:
-			if target == 9:
+			if target == 15:
 				_popup03()
 			if target == 22:
 				_popupeod()

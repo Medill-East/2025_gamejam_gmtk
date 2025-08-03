@@ -37,7 +37,7 @@ func _ready() -> void:
 	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day1:
 		get_tree().change_scene_to_file("res://loop/Start.tscn")
 	else:
-		get_tree().change_scene_to_file("res://loop/loop-main-day2.tscn")
+		get_tree().change_scene_to_file("res://loop/night.tscn")
 
 func _wait_hour(target: int):
 	while true:

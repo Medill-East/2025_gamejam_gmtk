@@ -212,7 +212,7 @@ speed_factor = 500
 start_seconds = 28800.0
 
 [node name="Loop-boss" parent="." instance=ExtResource("8_bd70e")]
-position = Vector2(392, 70)
+position = Vector2(392, -64)
 patrol_path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -231,3 +231,4 @@ offset_left = 16.0
 offset_top = 416.0
 offset_right = 33.0
 offset_bottom = 458.0
+rotation = 0.261799

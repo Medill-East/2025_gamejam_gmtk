@@ -13,6 +13,9 @@ var popup16 := preload("res://loop/popups/Dialogue/Dialogue_T16.tscn").instantia
 var popup17 := preload("res://loop/popups/Dialogue/Dialogue_T17.tscn").instantiate()
 var popup18 := preload("res://loop/popups/Dialogue/Dialogue_T18.tscn").instantiate()
 
+var break_sfx := preload("res://SFX/destruction-normal.wav")
+var bonus_sfx := preload("res://SFX/destruction-bonus.ogg")
+
 @export var required_score_day1:int = 3
 @export var required_score_day2:int = 30
 
@@ -93,7 +96,8 @@ func add(item_type: String, base: int):
 				"chair": _popup16() 
 				"printer": _popup17() 
 				"camera": _popup18()
-
+			#destroySFXBonus()
+			
 
 	var gained := base + bonus
 	points += gained
@@ -167,3 +171,18 @@ func _popup18():
 	add_child(popup18)
 	popup18.open()        # 打开&暂停	
 	
+
+
+func destroySFXBonus():
+	_play_sfx_at_position(bonus_sfx, Vector2(330, 240))
+	queue_free()
+
+func _play_sfx_at_position(stream: AudioStream, pos: Vector2) -> void:
+	var p := AudioStreamPlayer2D.new()
+	p.stream = stream
+	p.position = pos
+	p.autoplay = false
+	p.bus = "SFX"            # 可选：路由到 SFX bus
+	get_tree().current_scene.add_child(p)
+	p.play()
+	p.finished.connect(p.queue_free)

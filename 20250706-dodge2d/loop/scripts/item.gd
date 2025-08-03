@@ -33,6 +33,9 @@ signal destroyed(item_type:String, item_score: int)
 @onready var detection: Area2D = get_node_or_null("VisionArea")
 var is_camera: bool             # true = 有视锥，需要旋转
 
+var break_sfx := preload("res://SFX/destruction-normal.wav")
+var bonus_sfx := preload("res://SFX/destruction-bonus.ogg")
+
 func _ready() -> void:
 	is_camera = detection != null
 	if is_camera:
@@ -130,6 +133,7 @@ func _do_interact() -> void:
 	bar2d.visible = false            # 交互完成后可隐藏或 queue_free()
 	AUTOLOAD_SCORE.add(item_type,item_score)
 	emit_signal("destroyed", item_type, item_score)
+	destroySFXNormal()
 
 # 方便外部直接拿 0~1 的进度
 func get_ratio() -> float:
@@ -157,3 +161,21 @@ func _on_detect_mouse_exited() -> void:
 	#pass # Replace with function body.
 	emit_signal("hover_end", self)
 	#_highlight(false)
+
+func destroySFXNormal():
+	_play_sfx_at_position(break_sfx, global_position)
+	queue_free()
+
+func destroySFXBonus():
+	_play_sfx_at_position(bonus_sfx, global_position)
+	queue_free()
+
+func _play_sfx_at_position(stream: AudioStream, pos: Vector2) -> void:
+	var p := AudioStreamPlayer2D.new()
+	p.stream = stream
+	p.position = pos
+	p.autoplay = false
+	p.bus = "SFX"            # 可选：路由到 SFX bus
+	get_tree().current_scene.add_child(p)
+	p.play()
+	p.finished.connect(p.queue_free)

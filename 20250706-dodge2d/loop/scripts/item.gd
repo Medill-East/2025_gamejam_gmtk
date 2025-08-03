@@ -27,7 +27,19 @@ var _orig_material: Material
 
 signal destroyed(item_type:String, item_score: int)
 
+@export var left_limit := -60.0
+@export var right_limit :=  60.0
+@export var turn_speed :=  40.0
+@onready var detection: Area2D = get_node_or_null("VisionArea")
+var is_camera: bool             # true = 有视锥，需要旋转
+
 func _ready() -> void:
+	is_camera = detection != null
+	if is_camera:
+		detection.body_entered.connect(_on_player_seen_by_camera)
+	
+	#if detection!=null
+		#print("has vision area")
 	_area.body_entered.connect(_on_body_entered)
 	_area.body_exited.connect(_on_body_exited)
 	_highlight_spr.visible = false
@@ -69,6 +81,17 @@ func _process(delta: float) -> void:
 		_hold_time = 0.0
 		bar2d.visible = false        # 离开范围就隐藏
 
+func _physics_process(delta):
+	if is_camera:
+		rotation += deg_to_rad(turn_speed) * delta
+		if rotation_degrees > right_limit or rotation_degrees < left_limit:
+			turn_speed = -turn_speed        # 来回扫动
+
+func _on_player_seen_by_camera(body):
+	if body.is_in_group("player"):          # 根据你的玩家节点名调整
+		_player_in_range = true
+		print("camera see player")
+
 func _update_bar():
 	bar2d.visible = true
 	var pb := bar2d.get_node("Bar") as ProgressBar
@@ -82,7 +105,6 @@ func _on_body_entered(body: Node) -> void:
 		# 安全检查：若玩家脚本没实现该方法也不会崩
 		if body.has_method("enter_interactable"):
 			body.enter_interactable(self)
-		
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):

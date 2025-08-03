@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://crf0285cs5qao"]
+[gd_scene load_steps=6 format=3 uid="uid://crf0285cs5qao"]
 
 [ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_cr67m"]
 
@@ -11,8 +11,12 @@ radius = 12.3087
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d67tg"]
 size = Vector2(30, 34)
 
-[node name="Item2" instance=ExtResource("1_cr67m")]
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cr67m"]
+points = PackedVector2Array(-8, 0, -128, -64, -160, 0, -128, 64)
+
+[node name="camera-1" instance=ExtResource("1_cr67m")]
 item_type = "camera"
+turn_speed = 10.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_1aaph")
@@ -25,3 +29,16 @@ shape = SubResource("CircleShape2D_o08c1")
 visible = false
 position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_d67tg")
+
+[node name="VisionArea" type="Area2D" parent="." index="5"]
+rotation = 0.523598
+scale = Vector2(-1, -1)
+collision_layer = 8
+collision_mask = 2
+
+[node name="VisionShape" type="CollisionShape2D" parent="VisionArea" index="0"]
+shape = SubResource("ConvexPolygonShape2D_cr67m")
+
+[node name="Polygon2D" type="Polygon2D" parent="VisionArea" index="1"]
+color = Color(1, 0.25, 0.25, 0.6)
+polygon = PackedVector2Array(0, 0, -128, -64, -160, 0, -128, 64)

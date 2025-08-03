@@ -1,6 +1,10 @@
 extends Node2D
 class_name Interactable   # 便于自动补全
 
+signal hover_start(interactable)
+signal hover_end(interactable)
+var isHovering: bool = false
+
 @export var hold_threshold := 0.8      # 长按秒数
 @export var highlight_mode := 0        # 0=shader, 1=sprite
 @export var interact_text  := "长按 E 交互"  # 可用于 UI 提示
@@ -36,17 +40,28 @@ func _process(delta: float) -> void:
 	#
 	#if not _player_in_range:
 		#return
-
-	if _player_in_range:
-		if Input.is_action_pressed("Interact"):
-			_hold_time += delta
-			if _hold_time >= hold_threshold:
-				_do_interact()
-				_hold_time = 0.0           # 重置，防止连触发
-		else:
-			_hold_time = 0.0               # 松开就归零，可在 UI 上显示进度
+	# press to interact
+	#if _player_in_range:
+		#if Input.is_action_pressed("Interact"):
+			#_hold_time += delta
+			#if _hold_time >= hold_threshold:
+				#_do_interact()
+				#_hold_time = 0.0           # 重置，防止连触发
+		#else:
+			#_hold_time = 0.0               # 松开就归零，可在 UI 上显示进度
+		#_update_bar()
+	#else:
+		#bar2d.visible = false        # 离开范围就隐藏
+		
+	# hover to interact
+	if isHovering:
+		_hold_time += delta
 		_update_bar()
+		if _hold_time >= hold_threshold:
+			_do_interact()
+			_hold_time = 0.0           # 重置，防止连触发
 	else:
+		_hold_time = 0.0
 		bar2d.visible = false        # 离开范围就隐藏
 
 func _update_bar():
@@ -84,6 +99,7 @@ func _do_interact() -> void:
 	# 这里写真正的互动逻辑，比如开门、拾取物品、弹对话框……
 	print("Item %s interacted!" % name)
 	# 例如：queue_free()  # 播完动画后销毁
+	queue_free()  # 播完动画后销毁
 	bar2d.visible = false            # 交互完成后可隐藏或 queue_free()
 
 # 方便外部直接拿 0~1 的进度
@@ -101,4 +117,14 @@ func get_ratio() -> float:
 
 func _on_detect_mouse_entered() -> void:
 	print("mouse entered")
+	isHovering = true
+	emit_signal("hover_start", self)   # 通知玩家 / HUD
+	#_highlight(true)                   # 比如变色或显示轮廓
 	#pass # Replace with function body.
+
+
+func _on_detect_mouse_exited() -> void:
+	isHovering = false
+	#pass # Replace with function body.
+	emit_signal("hover_end", self)
+	#_highlight(false)

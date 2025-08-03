@@ -9,12 +9,17 @@ radius = 6.92479
 size = Vector2(20, 13)
 
 [node name="Item" instance=ExtResource("1_i7u1x")]
+item_score = 10
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-16, -10.5)
 region_rect = Rect2(192, 328, 32, 37)
 
 [node name="CollisionShape2D" parent="Detect" index="0"]
 shape = SubResource("CircleShape2D_1mc3b")
+
+[node name="StaticBody2D" parent="." index="4"]
+position = Vector2(0, -10.5)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(0, 10.5)

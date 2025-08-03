@@ -17,8 +17,11 @@ text = "This cursed job is so repetitive I could puke. Time to give everyone a v
 text = "Boss"
 
 [node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 144.0
+offset_right = 488.0
 offset_bottom = 312.0
 text = "This company DOES NOT encourage creativity. Doing your job—quietly—is the only way we survive. Now get back to work!"
+horizontal_alignment = 2
 
 [node name="Charater" parent="." index="2" instance=ExtResource("2_qegfu")]
 position = Vector2(616, 128)

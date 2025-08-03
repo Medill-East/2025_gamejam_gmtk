@@ -1,31 +1,38 @@
 [gd_scene load_steps=3 format=3 uid="uid://c28hnpwx45c2b"]
 
 [ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_5rcta"]
-[ext_resource type="PackedScene" uid="uid://bc2iqasnfkwuh" path="res://loop/characters/boss.tscn" id="2_14oyw"]
+[ext_resource type="PackedScene" uid="uid://bk2fekhhula84" path="res://loop/characters/boss-dialogue.tscn" id="2_5rcta"]
 
 [node name="Popup" instance=ExtResource("1_5rcta")]
 
-[node name="Narrator" parent="Panel" index="1"]
+[node name="Panel" parent="." index="0"]
+offset_bottom = -312.0
+
+[node name="Narrator" parent="Panel" index="0"]
 visible = false
 
-[node name="Eric name" parent="Panel" index="2"]
+[node name="Eric name" parent="Panel" index="1"]
 visible = false
 
-[node name="Eric dialogue" parent="Panel" index="3"]
+[node name="Eric dialogue" parent="Panel" index="2"]
 visible = false
 text = "..."
 
-[node name="Eric name2" parent="Panel" index="4"]
-layout_mode = 0
+[node name="Eric name2" parent="Panel" index="3"]
 text = "Boss"
 
-[node name="Guest dialogue" parent="Panel" index="5"]
-layout_mode = 0
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 144.0
+offset_right = 488.0
 text = "Who’s making noise in my office?! Don’t let me catch you—or it’s 99 days of overtime!"
+horizontal_alignment = 2
+
+[node name="CloseButton" parent="Panel" index="5"]
+offset_bottom = 128.0
 
 [node name="Eric" parent="." index="1"]
 visible = false
 
-[node name="Charater" parent="." index="2" instance=ExtResource("2_14oyw")]
+[node name="Charater2" parent="." index="2" instance=ExtResource("2_5rcta")]
 position = Vector2(616, 128)
 scale = Vector2(1.2, 1.2)

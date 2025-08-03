@@ -21,6 +21,7 @@ texture = SubResource("CompressedTexture2D_jeyrx")
 region_rect = Rect2(392, 1230, 52, 64)
 
 [node name="CollisionShape2D" parent="Detect" index="0"]
+scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_lclgh")
 
 [node name="StaticBody2D" parent="." index="4"]

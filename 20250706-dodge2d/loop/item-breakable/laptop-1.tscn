@@ -23,6 +23,7 @@ region_rect = Rect2(452, 560, 24, 32)
 region_enabled = true
 
 [node name="CollisionShape2D" parent="Detect" index="0"]
+scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_x0m7y")
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]

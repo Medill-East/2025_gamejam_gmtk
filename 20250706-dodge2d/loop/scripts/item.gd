@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 		#bar2d.visible = false        # 离开范围就隐藏
 		
 	# hover to interact
-	if isHovering:
+	if isHovering && _player_in_range:
 		_hold_time += delta
 		_update_bar()
 		if _hold_time >= hold_threshold:

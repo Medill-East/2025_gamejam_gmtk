@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://gru41y0i8tqm"]
+[gd_scene load_steps=22 format=4 uid="uid://gru41y0i8tqm"]
 
 [ext_resource type="Script" uid="uid://upufu7t86k75" path="res://loop/scripts/loop_main_day2.gd" id="1_nxrk7"]
 [ext_resource type="TileSet" uid="uid://d2m8ksahygnpc" path="res://loop/Tileset_Roombuild.tres" id="2_7lwn2"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c1frbibcy118n" path="res://art/Loop/3_Modern_Office_Shadowless/Modern_Office_Shadowless_32x32.png" id="5_pii04"]
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="6_3ya0u"]
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_8kojw"]
-[ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-caught-label.tscn" id="7_pii04"]
 [ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="8_7lwn2"]
 [ext_resource type="PackedScene" uid="uid://btny5t8yn21l" path="res://loop/loop-friend2.tscn" id="8_73d6a"]
 [ext_resource type="PackedScene" uid="uid://b66e20usqbo37" path="res://loop/loop-friend1.tscn" id="8_w3ags"]
@@ -176,7 +175,7 @@ patrol_path = NodePath("Path2D")
 [node name="Path2D" type="Path2D" parent="Loop-boss"]
 curve = SubResource("Curve2D_3ya0u")
 
-[node name="Loop-caught-label" parent="." instance=ExtResource("7_pii04")]
+[node name="Loop-caught-label" parent="." instance=ExtResource("10_gn74h")]
 offset_left = 16.0
 offset_top = 405.0
 offset_right = 33.0

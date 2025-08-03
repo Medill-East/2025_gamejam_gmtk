@@ -12,6 +12,8 @@ radius = 6.46886
 size = Vector2(32, 8)
 
 [node name="Item" type="Node2D" node_paths=PackedStringArray("_sprite", "_highlight_spr", "_area", "bar2d")]
+light_mask = 16
+visibility_layer = 2
 script = ExtResource("1_bxm1y")
 hold_threshold = 3.0
 highlight_mode = 1
@@ -46,6 +48,8 @@ visible = false
 position = Vector2(-32, -32)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 3.5)

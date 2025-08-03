@@ -133,7 +133,7 @@ func _do_interact() -> void:
 	bar2d.visible = false            # 交互完成后可隐藏或 queue_free()
 	AUTOLOAD_SCORE.add(item_type,item_score)
 	emit_signal("destroyed", item_type, item_score)
-	destroySFXNormal()
+	#destroySFXNormal()
 
 # 方便外部直接拿 0~1 的进度
 func get_ratio() -> float:

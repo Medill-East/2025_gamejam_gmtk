@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7h1bb5pvtdo0"]
 
-[ext_resource type="Script" uid="uid://dcnxk40eggpna" path="res://loop/item.gd" id="1_bxm1y"]
+[ext_resource type="Script" uid="uid://dcnxk40eggpna" path="res://loop/scripts/item.gd" id="1_bxm1y"]
 [ext_resource type="Texture2D" uid="uid://ts67lr1ps54x" path="res://art/Loop/Assets/Modern_Office_Black_Shadow_32x32.png" id="2_v44np"]
 [ext_resource type="Texture2D" uid="uid://5kruttxw7d43" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_152.png" id="3_jyv86"]
 [ext_resource type="PackedScene" uid="uid://boa7bokteffhi" path="res://loop/loop-worldholdbar2d.tscn" id="4_v44np"]

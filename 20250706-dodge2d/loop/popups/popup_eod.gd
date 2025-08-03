@@ -48,7 +48,7 @@ func update_score(day: int, required: int, total: int):
 	_required_destruction.text = str(required)
 	_total_destruction.text = str(total)
 
-func eod_success():
+func eod_yes():
 	score_yes.visible = true
 	score_no.visible = false
 	

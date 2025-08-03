@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr5ppav0ajjf" path="res://loop/characters/colleague 3.tscn" id="5_wv1ux"]
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="6_3ya0u"]
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_8kojw"]
-[ext_resource type="PackedScene" path="res://loop/loop-score-label.tscn" id="7_pii04"]
+[ext_resource type="PackedScene" uid="uid://jb7g14eoa1gf" path="res://loop/loop-score-label.tscn" id="7_pii04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)

@@ -94,6 +94,9 @@ func _on_player_seen_by_camera(body):
 	if body.is_in_group("player"):          # 根据你的玩家节点名调整
 		_player_in_range = true
 		print("camera see player")
+		#AUTOLOAD_SCORE.health -= 1
+		AUTOLOAD_SCORE.caughtAdd()
+		AUTOLOAD_LoopGameGD.fail()
 
 func _update_bar():
 	bar2d.visible = true

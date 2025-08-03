@@ -17,6 +17,10 @@ var current_hour
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AUTOLOAD_SCORE.health = 3
+	AUTOLOAD_SCORE.points = 0
+	$"Loop-caught-label".text = str(AUTOLOAD_SCORE.health)
+	$"Loop-score-label".text = str(AUTOLOAD_SCORE.points)
 	adjust_boss(false)
 	_popup01()
 	await popup01.closed
@@ -27,7 +31,8 @@ func _ready() -> void:
 	await _wait_hour(9)
 	await popup03.closed
 	adjust_boss(true)
-	await _wait_hour(10)
+	
+	await _wait_hour(22)
 	await popupeod.closed
 	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day1:
 		get_tree().change_scene_to_file("res://loop/Start.tscn")
@@ -41,7 +46,7 @@ func _wait_hour(target: int):
 		if hour == target:
 			if target == 9:
 				_popup03()
-			if target == 10:
+			if target == 22:
 				_popupeod()
 			break                                     # 满足→退出函数执行一次
 

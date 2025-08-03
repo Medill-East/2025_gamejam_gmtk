@@ -11,8 +11,9 @@ radius = 10.7703
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rk3u"]
 size = Vector2(24, 42)
 
-[node name="Item" instance=ExtResource("1_s4rn6")]
+[node name="Item2" instance=ExtResource("1_s4rn6")]
 item_score = 35
+item_type = "watermachine"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_jeyrx")

@@ -6,6 +6,7 @@ signal hover_end(interactable)
 var isHovering: bool = false
 
 @export var item_score:= 1
+@export var item_type:= "prop"
 
 @export var hold_threshold := 0.8      # 长按秒数
 @export var highlight_mode := 0        # 0=shader, 1=sprite
@@ -23,6 +24,8 @@ var _orig_material: Material
 #@export var bar_offset_px := Vector2(0, 0)   # 条离物体上移像素
 #var bar: Control                     # 屏幕上的条实例
 #@onready var _hud: HUD = get_tree().get_current_scene().get_node("Loop-hud") as HUD
+
+signal destroyed(item_type:String, item_score: int)
 
 func _ready() -> void:
 	_area.body_entered.connect(_on_body_entered)
@@ -103,7 +106,8 @@ func _do_interact() -> void:
 	# 例如：queue_free()  # 播完动画后销毁
 	queue_free()  # 播完动画后销毁
 	bar2d.visible = false            # 交互完成后可隐藏或 queue_free()
-	AUTOLOAD_SCORE.add(item_score)
+	AUTOLOAD_SCORE.add(item_type,item_score)
+	emit_signal("destroyed", item_type, item_score)
 
 # 方便外部直接拿 0~1 的进度
 func get_ratio() -> float:

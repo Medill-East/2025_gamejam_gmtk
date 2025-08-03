@@ -10,6 +10,7 @@ size = Vector2(30, 27)
 
 [node name="Printer" instance=ExtResource("1_if3ll")]
 item_score = 50
+item_type = "printer"
 
 [node name="CollisionShape2D" parent="Detect" index="0"]
 shape = SubResource("CircleShape2D_if3ll")

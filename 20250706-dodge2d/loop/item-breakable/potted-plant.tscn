@@ -8,8 +8,9 @@ radius = 6.92479
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5a7q"]
 size = Vector2(20, 13)
 
-[node name="Item" instance=ExtResource("1_i7u1x")]
+[node name="Item2" instance=ExtResource("1_i7u1x")]
 item_score = 10
+item_type = "pottedplant"
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-16, -10.5)

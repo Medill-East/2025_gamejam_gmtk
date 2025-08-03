@@ -25,6 +25,16 @@ offset_right = 496.0
 offset_bottom = 128.0
 text = "Thanks for knocking me over, Eric. I’ve been listening to his 'growth mindset' speech for 3 years."
 
+[node name="Label" type="Label" parent="Panel" index="6"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 248.0
+offset_right = 487.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(1, 0.752941, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "50"
+
 [node name="Node2D" type="Node2D" parent="." index="2"]
 position = Vector2(616, 120)
 rotation = 0.123944

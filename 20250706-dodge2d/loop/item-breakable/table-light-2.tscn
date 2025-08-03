@@ -11,8 +11,9 @@ radius = 6.30957
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d67tg"]
 size = Vector2(30, 34)
 
-[node name="Item" instance=ExtResource("1_sb81x")]
+[node name="Item2" instance=ExtResource("1_sb81x")]
 item_score = 15
+item_type = "tablelight"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_1aaph")

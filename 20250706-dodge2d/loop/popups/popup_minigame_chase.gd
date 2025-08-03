@@ -40,5 +40,5 @@ func _on_panel_input(event: InputEvent) -> void:
 
 func _on_close_button_pressed() -> void:
 	#print("pressed to close")
-	#close()
+	close()
 	get_tree().change_scene_to_file("res://loop/loop-main-nightOffice.tscn")

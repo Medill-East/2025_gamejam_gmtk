@@ -37,7 +37,7 @@ func _ready() -> void:
 	await popup02.closed
 	#print("popup02closed")
 	_popupD1()
-	await _wait_hour(15)
+	await _wait_hour(9)
 	await popup03.closed
 	adjust_boss(true)
 	

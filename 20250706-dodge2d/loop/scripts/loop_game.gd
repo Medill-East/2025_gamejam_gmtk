@@ -4,17 +4,20 @@ class_name GAMELOOP
 static var instance: GAMELOOP
 
 var popup05 := preload("res://loop/popups/Dialogue/Dialogue_T05.tscn").instantiate()
+var popupwarning := preload("res://loop/popups/Dialogue/Dialogue_Warning.tscn").instantiate()
 var popupminigamechase := preload("res://loop/popups/popup-minigame-chase.tscn").instantiate()
 
 
 func fail():
 	get_tree().paused = true
 	#HUD.instance.show_fail_label("GAME OVER！")
-	POPUP.instance.update_text("GAME OVER!")
-	POPUP.instance.open()
-	print("fail")
-	await POPUP.instance.closed
+	#POPUP.instance.update_text("GAME OVER!")
+	#POPUP.instance.open()
+	print("warning")
+	#await POPUP.instance.closed
+	_popupwarning()
 	if AUTOLOAD_SCORE.health <= 0:
+		POPUP.instance.close()
 		get_tree().change_scene_to_file("res://loop/Start.tscn")
 	
 func _ready():
@@ -38,6 +41,11 @@ func _popup05():
 	print("popup05")
 	add_child(popup05)
 	popup05.open()        # 打开&暂停	
+	
+func _popupwarning():
+	print("popupwarning")
+	add_child(popupwarning)
+	popupwarning.open()        # 打开&暂停	
 	
 func _popup_minigamechase():
 	print("popupminigamechase")

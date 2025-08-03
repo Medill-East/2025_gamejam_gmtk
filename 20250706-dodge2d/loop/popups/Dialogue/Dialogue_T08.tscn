@@ -9,7 +9,7 @@
 visible = false
 
 [node name="Eric dialogue" parent="Panel" index="2"]
-text = "T08"
+text = "Looks like the sabotage must go on…"
 
 [node name="Guest dialogue" parent="Panel" index="4"]
 offset_left = 152.0

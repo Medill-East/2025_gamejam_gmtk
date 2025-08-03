@@ -17,7 +17,7 @@ item_type = "watermachine"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("CompressedTexture2D_jeyrx")
-region_rect = Rect2(385, 495, 29, 62)
+region_rect = Rect2(384, 495, 31, 63)
 
 [node name="CollisionShape2D" parent="Detect" index="0"]
 shape = SubResource("CircleShape2D_lclgh")

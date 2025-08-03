@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cr32h70rrim6p"
-path="res://.godot/imported/Punch-GenericDestruct.wav-b4f825c3be550293d7f8161889652de4.sample"
+path="res://.godot/imported/destruction-normal.wav-85dfca74529c8493a8236af5fffbc13b.sample"
 
 [deps]
 
-source_file="res://SFX/Punch-GenericDestruct.wav"
-dest_files=["res://.godot/imported/Punch-GenericDestruct.wav-b4f825c3be550293d7f8161889652de4.sample"]
+source_file="res://SFX/destruction-normal.wav"
+dest_files=["res://.godot/imported/destruction-normal.wav-85dfca74529c8493a8236af5fffbc13b.sample"]
 
 [params]
 

@@ -11,7 +11,7 @@ radius = 12.3087
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d67tg"]
 size = Vector2(30, 34)
 
-[node name="Item2" instance=ExtResource("1_gehdg")]
+[node name="Item3" instance=ExtResource("1_gehdg")]
 item_score = 75
 item_type = "camera"
 

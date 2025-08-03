@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://c1frbibcy118n" path="res://art/Loop/3_Modern_Office_Shadowless/Modern_Office_Shadowless_32x32.png" id="5_pii04"]
 [ext_resource type="PackedScene" uid="uid://xcpshaqmq2ds" path="res://loop/loop-player.tscn" id="6_3ya0u"]
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_8kojw"]
-[ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-caught-label.tscn" id="7_pii04"]
 [ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="8_7lwn2"]
 [ext_resource type="PackedScene" uid="uid://btny5t8yn21l" path="res://loop/loop-friend2.tscn" id="8_73d6a"]
 [ext_resource type="PackedScene" uid="uid://b66e20usqbo37" path="res://loop/loop-friend1.tscn" id="8_w3ags"]
 [ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-score-label2.tscn" id="10_gn74h"]
 [ext_resource type="PackedScene" uid="uid://d13bb0ctowx5t" path="res://loop/loop-friend3.tscn" id="10_l1qiw"]
 [ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="11_wv1ux"]
+[ext_resource type="PackedScene" uid="uid://ci6twq5tlq5ik" path="res://loop/loop-caught-label2.tscn" id="16_73d6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)
@@ -176,14 +176,15 @@ patrol_path = NodePath("Path2D")
 [node name="Path2D" type="Path2D" parent="Loop-boss"]
 curve = SubResource("Curve2D_3ya0u")
 
-[node name="Loop-caught-label" parent="." instance=ExtResource("7_pii04")]
-offset_left = 16.0
-offset_top = 405.0
-offset_right = 33.0
-offset_bottom = 447.0
-
 [node name="Loop-score-label" parent="." instance=ExtResource("10_gn74h")]
 offset_left = 16.0
 offset_top = 437.0
 offset_right = 33.0
 offset_bottom = 479.0
+
+[node name="Loop-caught-label" parent="." instance=ExtResource("16_73d6a")]
+offset_left = 16.0
+offset_top = 408.0
+offset_right = 33.0
+offset_bottom = 450.0
+text = "3"

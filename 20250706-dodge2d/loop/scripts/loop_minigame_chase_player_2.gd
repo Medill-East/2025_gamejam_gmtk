@@ -76,5 +76,5 @@ func _on_interact_sense_area_entered(area: Area2D) -> void:
 func _on_interact_sense_body_entered(body: Node2D) -> void:
 	print("enterbody")
 	#pass # Replace with function body.
-	if body.is_in_group("trail"):      # 给 TrailBlock 放进组
-		AUTOLOAD_LOOPMINIGAMECHASE.fail()                # 全局方法或信号
+	#if body.is_in_group("trail"):      # 给 TrailBlock 放进组
+		#AUTOLOAD_MINIGAME_CHASE.fail()                # 全局方法或信号

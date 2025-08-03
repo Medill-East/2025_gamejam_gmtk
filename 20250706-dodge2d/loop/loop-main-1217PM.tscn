@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cwgddj4xigwm5"]
+[gd_scene load_steps=14 format=4 uid="uid://cwgddj4xigwm5"]
 
 [ext_resource type="TileSet" uid="uid://d2m8ksahygnpc" path="res://loop/Tileset_Roombuild.tres" id="1_22a7a"]
 [ext_resource type="Script" uid="uid://36dswio763rn" path="res://loop/scripts/loop_main_1217pm.gd" id="1_yqg21"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_bc0wx"]
 [ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="8_bd70e"]
 [ext_resource type="PackedScene" uid="uid://jb7g14eoa1gf" path="res://loop/loop-score-label.tscn" id="9_4wvik"]
+[ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-caught-label.tscn" id="10_8dspg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a7a"]
 size = Vector2(31.5, 146.5)
@@ -95,9 +96,15 @@ patrol_path = NodePath("../Path2D")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_4wvik")
 
-[node name="Loop-score-label" parent="." instance=ExtResource("9_4wvik")]
+[node name="Loop-caught-label" parent="." instance=ExtResource("9_4wvik")]
+offset_left = 16.0
+offset_top = 408.0
+offset_right = 50.0
+offset_bottom = 450.0
+text = "3"
+
+[node name="Loop-score-label" parent="." instance=ExtResource("10_8dspg")]
 offset_left = 16.0
 offset_top = 440.0
-offset_right = 50.0
+offset_right = 33.0
 offset_bottom = 482.0
-text = "00"

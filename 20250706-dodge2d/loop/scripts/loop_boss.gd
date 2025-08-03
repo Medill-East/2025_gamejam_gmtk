@@ -90,4 +90,5 @@ func _init_vision_shape():
 # ---------- 发现玩家 ----------
 func _on_player_spotted(body: Node) -> void:
 	if body is PLAYER:
+		AUTOLOAD_SCORE.caughtAdd()
 		AUTOLOAD_LoopGameGD.fail()                               # 全局管理器里触发失败

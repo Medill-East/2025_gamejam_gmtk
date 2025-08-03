@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_if3ll"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if3ll"]
-radius = 10.976
+radius = 8.30912
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_if3ll"]
 size = Vector2(30, 27)
@@ -11,6 +11,7 @@ size = Vector2(30, 27)
 [node name="Printer" instance=ExtResource("1_if3ll")]
 item_score = 50
 item_type = "printer"
+hold_threshold = 5.0
 
 [node name="CollisionShape2D" parent="Detect" index="0"]
 shape = SubResource("CircleShape2D_if3ll")

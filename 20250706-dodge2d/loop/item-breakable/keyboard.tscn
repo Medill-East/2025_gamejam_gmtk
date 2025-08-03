@@ -6,7 +6,7 @@
 load_path = "res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-728f96cef55c4b8ce36ded4df9bec06c.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pxpec"]
-radius = 6.46886
+radius = 4.60109
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtn48"]
 size = Vector2(32, 8)

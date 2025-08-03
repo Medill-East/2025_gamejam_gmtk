@@ -6,7 +6,7 @@
 load_path = "res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-728f96cef55c4b8ce36ded4df9bec06c.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o08c1"]
-radius = 12.3087
+radius = 8.77058
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d67tg"]
 size = Vector2(30, 34)
@@ -16,6 +16,7 @@ points = PackedVector2Array(-8, 0, -182.851, -60.7078, -207.349, 8.8614, -178.27
 
 [node name="camera-1" instance=ExtResource("1_cr67m")]
 item_type = "camera"
+hold_threshold = 5.0
 turn_speed = 10.0
 
 [node name="Sprite2D" parent="." index="0"]

@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d13bb0ctowx5t" path="res://loop/loop-friend3.tscn" id="10_l1qiw"]
 [ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="11_wv1ux"]
 [ext_resource type="PackedScene" uid="uid://cnjbesipkhshv" path="res://loop/item-breakable/telephone.tscn" id="13_1mgus"]
-[ext_resource type="PackedScene" uid="uid://bo2xumi8dhwio" path="res://loop/loop-caught-label2.tscn" id="16_73d6a"]
+[ext_resource type="PackedScene" path="res://loop/loop-caught-label2.tscn" id="16_73d6a"]
 [ext_resource type="Texture2D" uid="uid://bjpxjm8xquiw4" path="res://UI/pixel kit UI.png" id="20_s6wko"]
 [ext_resource type="Texture2D" uid="uid://bhcs01d46h8no" path="res://art/Loop/kenney_cursor-pixel-pack/Tiles/tile_0194.png" id="21_bisvy"]
 [ext_resource type="Texture2D" uid="uid://cmay5do05wl0w" path="res://art/Loop/kenney_cursor-pixel-pack/Tiles/tile_0156.png" id="22_bhhm6"]

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_i7u1x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mc3b"]
-radius = 6.92479
+radius = 5.53846
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5a7q"]
 size = Vector2(20, 13)

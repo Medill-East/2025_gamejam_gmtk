@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bd87a47xs6uoo" path="res://loop/ingredients/loop-clock.tscn" id="7_bc0wx"]
 [ext_resource type="PackedScene" uid="uid://ds6fdwva5scmc" path="res://loop/loop-boss.tscn" id="8_bd70e"]
 [ext_resource type="PackedScene" uid="uid://xp6r8tv81o05" path="res://loop/loop-score-label2.tscn" id="10_8dspg"]
-[ext_resource type="PackedScene" uid="uid://bo2xumi8dhwio" path="res://loop/loop-caught-label2.tscn" id="11_bgwss"]
+[ext_resource type="PackedScene" path="res://loop/loop-caught-label2.tscn" id="11_bgwss"]
 [ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="11_nbxmd"]
 [ext_resource type="PackedScene" uid="uid://c3qj53k5bcq1r" path="res://loop/item-breakable/potted-plant.tscn" id="12_rgai4"]
 [ext_resource type="PackedScene" uid="uid://ba8ckav7f31pc" path="res://loop/item-breakable/table-light-1.tscn" id="13_84vdj"]

@@ -10,6 +10,10 @@ var popup07 := preload("res://loop/popups/Dialogue/Dialogue_T07.tscn").instantia
 var popup08 := preload("res://loop/popups/Dialogue/Dialogue_T08.tscn").instantiate()
 var popupeod := preload("res://loop/popups/popup-eod.tscn").instantiate()
 
+var popupD1 := preload("res://loop/popups/Dialogue/UI_Day1.tscn").instantiate()
+var popupD2 := preload("res://loop/popups/Dialogue/UI_Day2.tscn").instantiate()
+
+
 @onready var clocklabel = $"Loop-clock"
 @onready var boss: = $"Loop-boss"
 
@@ -32,6 +36,7 @@ func _ready() -> void:
 	_popup02()
 	await popup02.closed
 	#print("popup02closed")
+	_popupD1()
 	await _wait_hour(15)
 	await popup03.closed
 	adjust_boss(true)
@@ -84,6 +89,16 @@ func _popup03():
 	print("popup03")
 	add_child(popup03)
 	popup03.open()        # 打开&暂停	
+
+func _popupD1():
+	print("popupD1")
+	add_child(popupD1)
+	popupD1.open()        # 打开&暂停	
+
+func _popupD2():
+	print("popupD2")
+	add_child(popupD2)
+	popupD2.open()        # 打开&暂停	
 
 func _popupeod():
 	print("popupeod")

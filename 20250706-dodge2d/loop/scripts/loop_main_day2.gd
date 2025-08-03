@@ -21,12 +21,15 @@ func _ready() -> void:
 	
 	$MusicManager.play_music(load("res://Music/Office-daytime.ogg"))
 	#
+	adjust_boss(false)
+
 	#AUTOLOAD_SCORE.health = 3
 	AUTOLOAD_SCORE.points = 0
 	#$"Loop-caught-label".text = str(AUTOLOAD_SCORE.health)
 	$"Loop-score-label".text = str(AUTOLOAD_SCORE.points)
 	_popup06()
 	await popup06.closed
+	await _wait_hour(12)
 	adjust_boss(true)
 	
 	await _wait_hour(22)

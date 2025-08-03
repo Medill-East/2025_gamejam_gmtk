@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cko6frsahyrt3"]
+
+[ext_resource type="Script" uid="uid://bcuevk6ocf4sl" path="res://loop/start.gd" id="1_hd4lx"]
+[ext_resource type="Texture2D" uid="uid://c0gvv2c7ro0h" path="res://UI/OutofOffice.png" id="2_wydxm"]
+[ext_resource type="PackedScene" uid="uid://cpwr52y2m47mp" path="res://loop/popups/Dialogue/Dialogue_T04.tscn" id="3_c0s0j"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hd4lx")
+
+[node name="background2" type="Sprite2D" parent="."]
+modulate = Color(0.76, 0.76, 0.76, 0.831373)
+position = Vector2(411.613, 262.023)
+scale = Vector2(1.66216, 1.61742)
+texture = ExtResource("2_wydxm")
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 324)
+
+[node name="Popup" parent="." instance=ExtResource("3_c0s0j")]

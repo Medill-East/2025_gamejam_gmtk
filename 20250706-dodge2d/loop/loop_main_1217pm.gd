@@ -28,6 +28,11 @@ func _ready() -> void:
 	await popup03.closed
 	adjust_boss(true)
 	await _wait_hour(22)
+	await popupeod.closed
+	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day1:
+		get_tree().change_scene_to_file("res://loop/Start.tscn")
+	else:
+		get_tree().change_scene_to_file("res://loop/loop-main-day2.tscn")
 
 func _wait_hour(target: int):
 	while true:
@@ -74,5 +79,10 @@ func _popup03():
 func _popupeod():
 	print("popupeod")
 	add_child(popupeod)
-	popupeod.update_score("1","10","40")
+	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day1:
+		popupeod.eod_no()
+	else:
+		popupeod.eod_yes()
+	popupeod.update_score(1,AUTOLOAD_SCORE.required_score_day1,AUTOLOAD_SCORE.points)
 	popupeod.open()        # 打开&暂停	
+	

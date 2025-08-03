@@ -12,6 +12,8 @@ static var instance: POPUPEOD
 @onready var _day: RichTextLabel = $Panel/Day
 @onready var _required_destruction: RichTextLabel = $Panel/RequiredDestruction
 @onready var _total_destruction: RichTextLabel = $"Panel/Total Destruction"
+@onready var score_yes: Sprite2D = $Panel/UiWinScreenNew
+@onready var score_no: Sprite2D = $Panel/UiFailScreenNew
 var currentText: String
 
 signal closed
@@ -41,10 +43,19 @@ func close() -> void:
 func update_text(string: String):
 	currentText = string
 	
-func update_score(day: String, required: String, total: String):
-	_day.text = day
-	_required_destruction.text = required
-	_total_destruction.text = total
+func update_score(day: int, required: int, total: int):
+	_day.text = str(day)
+	_required_destruction.text = str(required)
+	_total_destruction.text = str(total)
+
+func eod_success():
+	score_yes.visible = true
+	score_no.visible = false
+	
+func eod_no():
+	score_yes.visible = false
+	score_no.visible = true
+
 
 # -------- 内部 --------
 func _on_panel_input(event: InputEvent) -> void:
@@ -55,3 +66,6 @@ func _on_panel_input(event: InputEvent) -> void:
 func _on_close_button_pressed() -> void:
 	print("pressed to close")
 	close()
+	
+	
+	

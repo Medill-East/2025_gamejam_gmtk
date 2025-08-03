@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://xp6r8tv81o05"]
-
-[ext_resource type="Script" uid="uid://bkv7scyv0ec7g" path="res://loop/scripts/loop_caught_label.gd" id="1_ablk1"]
-
-[node name="Loop-caught-label" type="Label"]
-theme_override_colors/font_color = Color(0.933333, 0.337255, 0.254902, 1)
-theme_override_font_sizes/font_size = 30
-text = "0"
-script = ExtResource("1_ablk1")

@@ -22,14 +22,14 @@ func _ready() -> void:
 	$MusicManager.play_music(load("res://Music/Office-daytime.ogg"))
 	#
 	#AUTOLOAD_SCORE.health = 3
-	#AUTOLOAD_SCORE.points = 0
+	AUTOLOAD_SCORE.points = 0
 	#$"Loop-caught-label".text = str(AUTOLOAD_SCORE.health)
-	#$"Loop-score-label".text = str(AUTOLOAD_SCORE.points)
+	$"Loop-score-label".text = str(AUTOLOAD_SCORE.points)
 	_popup06()
 	await popup06.closed
 	adjust_boss(true)
 	
-	await _wait_hour(10)
+	await _wait_hour(22)
 	await popupeod.closed
 	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day1:
 		get_tree().change_scene_to_file("res://loop/loop-main-day2.tscn")
@@ -45,7 +45,7 @@ func _wait_hour(target: int):
 		var hour : int = await clocklabel.hour_tick   # 等下一次整点
 		#print(hour)
 		if hour == target:
-			if target == 10:
+			if target == 22:
 				_popupeod()
 			break                                     # 满足→退出函数执行一次
 
@@ -98,10 +98,10 @@ func _popup08():
 func _popupeod():
 	print("popupeod")
 	add_child(popupeod)
-	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day1:
+	if AUTOLOAD_SCORE.points < AUTOLOAD_SCORE.required_score_day2:
 		popupeod.eod_no()
 	else:
 		popupeod.eod_yes()
-	popupeod.update_score(1,AUTOLOAD_SCORE.required_score_day1,AUTOLOAD_SCORE.points)
+	popupeod.update_score(2,AUTOLOAD_SCORE.required_score_day2,AUTOLOAD_SCORE.points)
 	popupeod.open()        # 打开&暂停	
 	

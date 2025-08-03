@@ -1,6 +1,4 @@
 extends CanvasLayer
-class_name POPUP
-static var instance: POPUP
 
 @export var default_text: String = "这是静态弹窗内容。\n点击任意处关闭。"
 @export var pause_on_open: bool = true
@@ -14,10 +12,7 @@ var currentText: String
 signal closed
 
 func _ready() -> void:
-	instance = self
-	visible = false
 	currentText = _label.text
-
 	_panel.gui_input.connect(_on_panel_input)
 	#_btn.pressed.connect(close)
 	#currentText = "Do your job!"
@@ -43,7 +38,5 @@ func _on_panel_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		close()
 
-
 func _on_close_button_pressed() -> void:
-	print("pressed to close")
-	close()
+	get_tree().change_scene_to_file("res://loop/minigame-chase/loop-minigame-chase.tscn")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cko6frsahyrt3"]
 
-[ext_resource type="Script" uid="uid://cn8hav5dauuvc" path="res://loop/loop-night.gd" id="1_c0s0j"]
+[ext_resource type="Script" uid="uid://cn8hav5dauuvc" path="res://loop/scripts/loop-night.gd" id="1_c0s0j"]
 [ext_resource type="Texture2D" uid="uid://c0gvv2c7ro0h" path="res://UI/OutofOffice.png" id="2_wydxm"]
 [ext_resource type="PackedScene" uid="uid://cpwr52y2m47mp" path="res://loop/popups/Dialogue/Dialogue_T04.tscn" id="3_c0s0j"]
 

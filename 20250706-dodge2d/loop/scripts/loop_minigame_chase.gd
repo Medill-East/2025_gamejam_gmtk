@@ -3,7 +3,7 @@ class_name MINIGAME_CHASE
 
 static var instance: MINIGAME_CHASE
 
-var timerParent := preload("res://loop/loop-minigame-chase.tscn")
+var timerParent := preload("res://loop/minigame-chase/loop-minigame-chase.tscn")
 
 @onready var timer: = $CanvasLayer/Label
 

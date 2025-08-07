@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dengefojuwhaj"]
+
+[ext_resource type="Script" uid="uid://fgriav8tvgxv" path="res://loop/scripts/loop_minigame_chase.gd" id="1_a0d8f"]
+[ext_resource type="PackedScene" uid="uid://bm17yl36fb4yd" path="res://loop/minigame-chase/loop-minigame-chase-enemy.tscn" id="3_e62qw"]
+[ext_resource type="PackedScene" uid="uid://yli23frp1h8d" path="res://loop/minigame-chase/loop-minigame-chase-player2.tscn" id="4_a0d8f"]
+[ext_resource type="PackedScene" uid="uid://ger46k0q38jv" path="res://loop/minigame-chase/loop-minigame-chase-trailblock.tscn" id="4_fcs84"]
+[ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="5_pnffk"]
+
+[node name="Loop-minigame-chase" type="Node2D"]
+script = ExtResource("1_a0d8f")
+START_TIME = 10.0
+
+[node name="TrailRoot" type="Node2D" parent="."]
+
+[node name="Loop-minigame-chase-trailblock2-LEFT" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(56, 360)
+scale = Vector2(1, 24)
+
+[node name="Loop-minigame-chase-trailblock3-UP" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(624, 40)
+rotation = -1.57079
+scale = Vector2(2, 48)
+
+[node name="Loop-minigame-chase-trailblock4-DOWN" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(568, 472)
+rotation = 1.57079
+scale = Vector2(2, 48)
+
+[node name="Loop-minigame-chase-trailblock5-RIGHT" parent="TrailRoot" instance=ExtResource("4_fcs84")]
+position = Vector2(648, 344)
+scale = Vector2(1, 24)
+
+[node name="Loop-minigame-chase-enemy" parent="." node_paths=PackedStringArray("minigame_chase_player", "trail_root") instance=ExtResource("3_e62qw")]
+position = Vector2(616, 424)
+speed = 100.0
+minigame_chase_player = NodePath("../Loop-minigame-chase-player2")
+trail_root = NodePath("../TrailRoot")
+
+[node name="Loop-minigame-chase-trailblock" parent="." instance=ExtResource("4_fcs84")]
+position = Vector2(568, 328)
+
+[node name="Loop-minigame-chase-player2" parent="." instance=ExtResource("4_a0d8f")]
+position = Vector2(512, 280)
+max_speed = 250.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+
+[node name="MusicManager" parent="." instance=ExtResource("5_pnffk")]

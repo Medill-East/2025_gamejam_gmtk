@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://4v0jurxfrv0b"]
+
+[ext_resource type="Script" uid="uid://ilp6l8uvb1tq" path="res://loop/characters/colleague_path.gd" id="1_3chrh"]
+[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_hctst"]
+[ext_resource type="Texture2D" uid="uid://5kruttxw7d43" path="res://art/Loop/4_Modern_Office_singles/32x32/Modern_Office_Singles_32x32_152.png" id="4_i07ik"]
+[ext_resource type="PackedScene" uid="uid://boa7bokteffhi" path="res://loop/loop-worldholdbar2d.tscn" id="5_eled8"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="6_eled8"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3yhno"]
+points = PackedVector2Array(0, 0, -128, -64, -160, 0, -128, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eh3uy"]
+load_path = "res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-728f96cef55c4b8ce36ded4df9bec06c.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awnck"]
+radius = 6.22896
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v052m"]
+size = Vector2(50, 42)
+
+[node name="slices-me2" type="CharacterBody2D" node_paths=PackedStringArray("_sprite", "_highlight_spr", "_area", "bar2d")]
+script = ExtResource("1_3chrh")
+item_type = "cup-shadow"
+hold_threshold = 3.0
+_sprite = NodePath("Sprite2D2")
+_highlight_spr = NodePath("High")
+_area = NodePath("Detect")
+bar2d = NodePath("Loop-worldholdbar2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.382905, 0.382905)
+texture = ExtResource("2_hctst")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(389, 20, 75, 130)
+
+[node name="VisionArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+collision_mask = 2
+
+[node name="VisionShape" type="CollisionShape2D" parent="VisionArea"]
+shape = SubResource("ConvexPolygonShape2D_3yhno")
+
+[node name="RayCastHolder" type="Node2D" parent="."]
+visible = false
+
+[node name="Charater" parent="." instance=ExtResource("6_eled8")]
+modulate = Color(0.48, 0.48, 0.48, 0.647059)
+scale = Vector2(-0.4, 0.4)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -14.0
+offset_top = -24.0
+offset_right = 26.0
+offset_bottom = 16.0
+scale = Vector2(0.715233, 1.24)
+color = Color(0, 0, 0, 0.0941176)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-16, -7)
+texture = SubResource("CompressedTexture2D_eh3uy")
+offset = Vector2(16, 0)
+region_enabled = true
+region_rect = Rect2(392, 1230, 52, 64)
+
+[node name="High" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_i07ik")
+offset = Vector2(16, 0)
+
+[node name="Detect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_awnck")
+
+[node name="Loop-worldholdbar2d" parent="." instance=ExtResource("5_eled8")]
+visible = false
+position = Vector2(-32, -32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 11)
+shape = SubResource("RectangleShape2D_v052m")
+
+[connection signal="mouse_entered" from="Detect" to="." method="_on_detect_mouse_entered"]
+[connection signal="mouse_exited" from="Detect" to="." method="_on_detect_mouse_exited"]

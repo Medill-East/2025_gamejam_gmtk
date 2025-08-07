@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://p8r81r2pv370"]
+
+[ext_resource type="PackedScene" uid="uid://b56ws0nkbc0s5" path="res://loop/characters/Charater.tscn" id="1_tog6s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l2gje"]
+load_path = "res://.godot/imported/Characters.png-52b3f7bcec2682b49fd99b4e014bf088.ctex"
+
+[node name="Charater" instance=ExtResource("1_tog6s")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("CompressedTexture2D_l2gje")
+region_enabled = true
+region_rect = Rect2(389, 20, 75, 130)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = null
+disabled = true

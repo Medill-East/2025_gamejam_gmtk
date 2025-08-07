@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgrkj5bfq1qfd"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_yype0"]
+[ext_resource type="PackedScene" uid="uid://b0a334lho3g3l" path="res://loop/item-breakable/table-light-2.tscn" id="2_fcyep"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="3_kfh65"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="4_wvb0c"]
+
+[node name="Popup03" instance=ExtResource("1_yype0")]
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+text = "I am the friend of dark, wanting you to live bravely."
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 360.0
+offset_right = 464.0
+text = "Light"
+horizontal_alignment = 2
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+text = "A light is expected to embrace the dark, which has never happened. 
+Thank you."
+
+[node name="Label" parent="Panel" index="6"]
+visible = false
+
+[node name="Item4" parent="Panel" index="7" instance=ExtResource("2_fcyep")]
+visible = false
+position = Vector2(32, 320)
+scale = Vector2(-2, 2)
+
+[node name="Item3" parent="Panel" index="8" instance=ExtResource("2_fcyep")]
+position = Vector2(536, 40)
+scale = Vector2(2, 2)
+
+[node name="Charater" parent="." index="1" instance=ExtResource("3_kfh65")]
+visible = false
+position = Vector2(96, 392)
+scale = Vector2(1, 1)
+
+[node name="Eric" parent="." index="2"]
+visible = false
+
+[node name="Node2D" parent="." index="3"]
+visible = false
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("4_wvb0c")]
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)
+
+[node name="DialogueBonusPixel" parent="." index="4"]
+visible = false

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8f64daposi1i"]
+
+[ext_resource type="Texture2D" uid="uid://dcidkbfx0ds75" path="res://slices/art/recycle_items.png" id="1_ticsl"]
+
+[node name="Cup" type="Node2D"]
+
+[node name="RecycleItems" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_ticsl")
+region_enabled = true
+region_rect = Rect2(465, 36, 29, 26)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsod4xfjtmd0n"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_ojaya"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="2_6n0gi"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="3_35y1m"]
+[ext_resource type="PackedScene" uid="uid://p8r81r2pv370" path="res://slices/slices-me-character-nocollision.tscn" id="4_xnrou"]
+[ext_resource type="PackedScene" uid="uid://b0a334lho3g3l" path="res://loop/item-breakable/table-light-2.tscn" id="5_6n0gi"]
+
+[node name="Popup" instance=ExtResource("1_ojaya")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+visible = false
+offset_left = 392.0
+offset_right = 496.0
+text = "Cup"
+horizontal_alignment = 2
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 168.0
+offset_top = 136.0
+offset_right = 512.0
+offset_bottom = 216.0
+text = "I am a friend of darkness,
+want you to live bravely."
+
+[node name="Label" parent="Panel" index="6"]
+visible = false
+
+[node name="Charater" parent="Panel" index="7" instance=ExtResource("2_6n0gi")]
+visible = false
+position = Vector2(24, 312)
+scale = Vector2(1, 1)
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("3_35y1m")]
+visible = false
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)
+
+[node name="DialogueBonusPixel" parent="." index="3"]
+visible = false
+
+[node name="Charater" parent="." index="4" instance=ExtResource("4_xnrou")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(104, 389)
+scale = Vector2(1, 1)
+
+[node name="Item3" parent="." index="5" instance=ExtResource("5_6n0gi")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(608, 120)
+scale = Vector2(2, 2)

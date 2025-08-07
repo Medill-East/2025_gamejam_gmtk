@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://b31aknhl853m8"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_hjk3m"]
+[ext_resource type="PackedScene" uid="uid://p8r81r2pv370" path="res://slices/slices-me-character-nocollision.tscn" id="2_hjk3m"]
+
+[node name="Popup" instance=ExtResource("1_hjk3m")]
+
+[node name="Narrator" parent="Panel" index="0"]
+text = "Work, work...
+What is the meaning of it?
+Earn you another line on the paper really worth your time?
+Not ought to be like this.
+
+To know
+To break
+The SHADOW of you"
+
+[node name="Eric name" parent="Panel" index="1"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+visible = false
+
+[node name="Eric name2" parent="Panel" index="3"]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 64.0
+offset_bottom = 40.0
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 344.0
+offset_bottom = 64.0
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="Charater2" parent="." index="2" instance=ExtResource("2_hjk3m")]
+position = Vector2(96, 408)
+scale = Vector2(1.2, 1.2)

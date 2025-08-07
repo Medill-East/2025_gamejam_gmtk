@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ac4um4ox6ju"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_hasch"]
+[ext_resource type="Texture2D" uid="uid://cg7avfgx0rng3" path="res://UI/Dialogue_bonus_pixel.png" id="3_pdpon"]
+
+[node name="Popup" instance=ExtResource("1_hasch")]
+
+[node name="Narrator" parent="Panel" index="0"]
+visible = false
+
+[node name="Eric name" parent="Panel" index="1"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+visible = false
+text = "T08"
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 408.0
+text = "Potted plant"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 152.0
+offset_right = 496.0
+offset_bottom = 128.0
+text = "Thanks for knocking me over, Eric. I’ve been listening to his 'growth mindset' speech for 3 years."
+
+[node name="Label" type="Label" parent="Panel" index="6"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 248.0
+offset_right = 487.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(1, 0.752941, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "50"
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+position = Vector2(616, 120)
+rotation = 0.123944
+
+[node name="DialogueBonusPixel" type="Sprite2D" parent="." index="3"]
+position = Vector2(416, 328)
+texture = ExtResource("3_pdpon")

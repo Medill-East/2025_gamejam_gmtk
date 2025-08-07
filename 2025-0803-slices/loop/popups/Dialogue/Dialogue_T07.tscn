@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl2l8o78c5c73"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_boo4c"]
+[ext_resource type="PackedScene" uid="uid://bk2fekhhula84" path="res://loop/characters/boss-dialogue.tscn" id="2_fpdvl"]
+
+[node name="Popup" instance=ExtResource("1_boo4c")]
+
+[node name="Narrator" parent="Panel" index="0"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+text = "Ha-ha-ha! Now nobody can work!"
+
+[node name="Eric name2" parent="Panel" index="3"]
+text = "Boss"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 200.0
+offset_right = 544.0
+text = "Argh…
+Well, a vacation isn’t the worst idea…"
+
+[node name="Charater" parent="." index="2" instance=ExtResource("2_fpdvl")]
+position = Vector2(616, 128)
+scale = Vector2(1.2, 1.2)

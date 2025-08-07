@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds6fdwva5scmc"]
+
+[ext_resource type="Script" uid="uid://v1lpy7mrnigh" path="res://loop/scripts/loop_boss.gd" id="1_fpcte"]
+[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_duqep"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3yhno"]
+points = PackedVector2Array(-8, 0, -128, -64, -160, 0, -128, 64)
+
+[node name="Loop-boss" type="CharacterBody2D"]
+script = ExtResource("1_fpcte")
+ray_count = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.382905, 0.382905)
+texture = ExtResource("2_duqep")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(394, 185, 65, 111)
+
+[node name="VisionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="VisionShape" type="CollisionShape2D" parent="VisionArea"]
+shape = SubResource("ConvexPolygonShape2D_3yhno")
+
+[node name="RayCastHolder" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0.25, 0.25, 0.235294)
+polygon = PackedVector2Array(0, -8, -128, -64, -160, 0, -128, 64)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://xcpshaqmq2ds"]
+
+[ext_resource type="Script" uid="uid://cf7kpjp0ue5vh" path="res://loop/scripts/loop_player.gd" id="1_6s5li"]
+[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_nj3oj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj3oj"]
+size = Vector2(8, 5.33333)
+
+[node name="Loop-player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 20
+script = ExtResource("1_6s5li")
+follow_speed = 10.0
+max_speed = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.382905, 0.382905)
+texture = ExtResource("2_nj3oj")
+region_enabled = true
+region_rect = Rect2(389, 20, 75, 130)
+
+[node name="InteractSense" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 15)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_nj3oj")

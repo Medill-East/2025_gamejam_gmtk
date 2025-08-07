@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://yli23frp1h8d"]
+
+[ext_resource type="Script" uid="uid://bkhtsq7o7kp1q" path="res://loop/scripts/loop_minigame_chase_player_2.gd" id="1_0hg5n"]
+[ext_resource type="Texture2D" uid="uid://b0dffa1s8ykvp" path="res://art/Loop/Assets/player.png" id="2_0hg5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj3oj"]
+size = Vector2(10.6667, 10.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hg5n"]
+radius = 16.0312
+
+[node name="Loop-minigame-chase-player2" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 28
+script = ExtResource("1_0hg5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_nj3oj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_0hg5n")
+
+[node name="InteractSense" type="Area2D" parent="."]
+position = Vector2(0, -16)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractSense"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_0hg5n")
+
+[connection signal="area_entered" from="InteractSense" to="." method="_on_interact_sense_area_entered"]
+[connection signal="body_entered" from="InteractSense" to="." method="_on_interact_sense_body_entered"]

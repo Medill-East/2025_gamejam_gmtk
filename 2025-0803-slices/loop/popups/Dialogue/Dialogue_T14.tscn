@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnkyt6tebiuj0"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_s17kb"]
+[ext_resource type="PackedScene" uid="uid://bp6hp1k0ndc48" path="res://loop/characters/keyboard-dialogue.tscn" id="2_s17kb"]
+
+[node name="Popup" instance=ExtResource("1_s17kb")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 416.0
+offset_right = 552.0
+scale = Vector2(1, 1.00977)
+text = "Keyboard"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 208.0
+offset_right = 512.0
+text = "You're pressing all the right buttons, Eric—literally."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_s17kb")]
+position = Vector2(-7.93863, 0.989016)
+scale = Vector2(2.23009, 2.23009)

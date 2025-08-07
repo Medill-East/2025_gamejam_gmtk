@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dks1b02ejqyr6"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_vffme"]
+[ext_resource type="PackedScene" uid="uid://b7whbpa1hhyn5" path="res://loop/characters/printer-dialogue.tscn" id="2_vffme"]
+
+[node name="Popup" instance=ExtResource("1_vffme")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 432.0
+offset_right = 568.0
+scale = Vector2(1, 1.00977)
+text = "Printer"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 176.0
+text = "My only function is to spit out nonsense—just like our boss."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_vffme")]
+position = Vector2(-7.93863, 0.989015)
+scale = Vector2(2.11101, 2.11101)

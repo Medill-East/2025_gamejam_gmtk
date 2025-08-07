@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv1xtj2tgjf0s"]
+
+[ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_11mem"]
+[ext_resource type="PackedScene" uid="uid://c8f64daposi1i" path="res://slices/art/cup.tscn" id="2_1y016"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_if3ll"]
+radius = 8.30912
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if3ll"]
+size = Vector2(30, 27)
+
+[node name="Cup" instance=ExtResource("1_11mem")]
+item_score = 50
+item_type = "cup"
+hold_threshold = 5.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-26, 4.25)
+scale = Vector2(1.5, 1.56667)
+region_rect = Rect2(496, 1080, 8, 15)
+
+[node name="CollisionShape2D" parent="Detect" index="0"]
+shape = SubResource("CircleShape2D_if3ll")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_if3ll")
+
+[node name="Cup" parent="." index="5" instance=ExtResource("2_1y016")]
+visible = false
+position = Vector2(-8, -8)
+scale = Vector2(0.5, 0.5)

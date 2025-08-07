@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba1qqtxjov6r4"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_cnjcr"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="2_nimyx"]
+[ext_resource type="PackedScene" uid="uid://cv1xtj2tgjf0s" path="res://slices/items/cup.tscn" id="3_ohw3l"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="4_vrg7b"]
+
+[node name="Popup" instance=ExtResource("1_cnjcr")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 392.0
+offset_right = 496.0
+text = "Cup"
+horizontal_alignment = 2
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 144.0
+text = "A cup is meant to be refilled again and again, 
+which has never happened. 
+Thank you."
+fit_content = true
+
+[node name="Label" parent="Panel" index="6"]
+visible = false
+
+[node name="Charater" parent="Panel" index="7" instance=ExtResource("2_nimyx")]
+visible = false
+position = Vector2(24, 312)
+scale = Vector2(1, 1)
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="Cup" parent="Node2D" index="0" instance=ExtResource("3_ohw3l")]
+position = Vector2(-11.898, -22.7032)
+rotation = -0.123944
+scale = Vector2(2, 2)
+
+[node name="Breakables-dialogue" parent="Node2D" index="1" instance=ExtResource("4_vrg7b")]
+visible = false
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)
+
+[node name="DialogueBonusPixel" parent="." index="3"]
+visible = false

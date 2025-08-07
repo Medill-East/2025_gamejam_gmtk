@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://oqj16e75x2c5"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_wda3j"]
+[ext_resource type="Texture2D" uid="uid://ccdp1o3rvglqh" path="res://UI/UI_DestructionCount.png" id="2_7g8nk"]
+[ext_resource type="Script" uid="uid://p3rvoj5k0mcs" path="res://loop/popups/popup_eod.gd" id="2_8q77h"]
+[ext_resource type="Texture2D" uid="uid://dre1dghw8b7da" path="res://UI/UI_FailScreen_new.png" id="4_rhgil"]
+[ext_resource type="Texture2D" uid="uid://cfy4xbberbb4" path="res://UI/UI_WinScreen_new.png" id="5_h3ciu"]
+[ext_resource type="PackedScene" uid="uid://crc2knruigbf0" path="res://loop/MusicManager.tscn" id="6_h3ciu"]
+
+[node name="Popup-eod" instance=ExtResource("1_wda3j")]
+script = ExtResource("2_8q77h")
+
+[node name="UiDestructionCount" type="Sprite2D" parent="Panel" index="0"]
+visible = false
+position = Vector2(288, 176)
+scale = Vector2(0.382023, 0.290645)
+texture = ExtResource("2_7g8nk")
+
+[node name="UiFailScreenNew" type="Sprite2D" parent="Panel" index="1"]
+visible = false
+position = Vector2(288, 176)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_rhgil")
+
+[node name="UiWinScreenNew" type="Sprite2D" parent="Panel" index="2"]
+position = Vector2(288, 176)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_h3ciu")
+
+[node name="Day" type="RichTextLabel" parent="Panel" index="3"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 64.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "1"
+fit_content = true
+
+[node name="RequiredDestruction" type="RichTextLabel" parent="Panel" index="4"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 111.0
+offset_right = 459.0
+offset_bottom = 142.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "1"
+fit_content = true
+
+[node name="Total Destruction" type="RichTextLabel" parent="Panel" index="5"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 160.0
+offset_right = 420.0
+offset_bottom = 191.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "1"
+fit_content = true
+
+[node name="Narrator" parent="Panel" index="6"]
+visible = false
+
+[node name="Eric name" parent="Panel" index="7"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="8"]
+visible = false
+
+[node name="Eric name2" parent="Panel" index="9"]
+visible = false
+
+[node name="Guest dialogue" parent="Panel" index="10"]
+visible = false
+offset_left = 424.0
+offset_top = 120.0
+offset_right = 464.0
+offset_bottom = 162.0
+theme_override_font_sizes/normal_font_size = 30
+text = "1"
+fit_content = true
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="MusicManager" parent="." index="2" instance=ExtResource("6_h3ciu")]

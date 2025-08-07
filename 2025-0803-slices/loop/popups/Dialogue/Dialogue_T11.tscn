@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkytx0u0fft2s"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_e3oh0"]
+[ext_resource type="PackedScene" uid="uid://bisguskaqkjgn" path="res://loop/characters/computer-dialogue.tscn" id="2_e3oh0"]
+
+[node name="Popup" instance=ExtResource("1_e3oh0")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+scale = Vector2(1, 1.00977)
+text = "Computer"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+text = "Please stop working me overtime. I'm not even salaried."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_e3oh0")]
+scale = Vector2(3.19716, 3.19716)

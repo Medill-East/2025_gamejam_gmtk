@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://o5a58byd7860"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_y5pyu"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="2_wvs3x"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="3_x4s3s"]
+[ext_resource type="PackedScene" uid="uid://og7yttj4x5t5" path="res://loop/item-breakable/orange-chair-back.tscn" id="4_dqj25"]
+
+[node name="Popup04" instance=ExtResource("1_y5pyu")]
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+text = "I am also a dancer, wanting to rotating freely from time to time."
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 392.0
+offset_right = 496.0
+text = "Chair"
+horizontal_alignment = 2
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+text = "A chair is not made to be sat on all the time, which has never happened. 
+Thank you."
+
+[node name="Label" parent="Panel" index="6"]
+visible = false
+
+[node name="Charater" parent="." index="1" instance=ExtResource("2_wvs3x")]
+visible = false
+position = Vector2(96, 392)
+scale = Vector2(1, 1)
+
+[node name="Eric" parent="." index="2"]
+visible = false
+
+[node name="Node2D" parent="." index="3"]
+visible = false
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("3_x4s3s")]
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)
+
+[node name="DialogueBonusPixel" parent="." index="4"]
+visible = false
+
+[node name="Item4" parent="." index="5" instance=ExtResource("4_dqj25")]
+visible = false
+position = Vector2(93, 392)
+scale = Vector2(2, 2)
+
+[node name="Item3" parent="." index="6" instance=ExtResource("4_dqj25")]
+position = Vector2(608, 112)
+scale = Vector2(-2, 2)

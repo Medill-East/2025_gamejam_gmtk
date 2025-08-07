@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://rlmn3jns0h7q"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_km72c"]
+[ext_resource type="PackedScene" uid="uid://bk2fekhhula84" path="res://loop/characters/boss-dialogue.tscn" id="2_rtq17"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="3_1c6og"]
+
+[node name="Popup" instance=ExtResource("1_km72c")]
+
+[node name="Panel" parent="." index="0"]
+offset_bottom = -312.0
+
+[node name="Narrator" parent="Panel" index="0"]
+visible = false
+
+[node name="Eric name" parent="Panel" index="1"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+visible = false
+text = "..."
+
+[node name="Eric name2" parent="Panel" index="3"]
+visible = false
+text = "Boss"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 144.0
+offset_right = 488.0
+theme_override_colors/default_color = Color(0.0784314, 0, 0, 1)
+text = "You are contradictory. 
+You think you do not care about others.
+Yet you write letters, even now."
+fit_content = true
+horizontal_alignment = 2
+
+[node name="CloseButton" parent="Panel" index="5"]
+offset_bottom = 128.0
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="Charater2" parent="." index="2" instance=ExtResource("2_rtq17")]
+visible = false
+position = Vector2(616, 128)
+scale = Vector2(1.2, 1.2)
+
+[node name="Charater" parent="." index="3" instance=ExtResource("3_1c6og")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(600, 144)
+scale = Vector2(-1, 1)

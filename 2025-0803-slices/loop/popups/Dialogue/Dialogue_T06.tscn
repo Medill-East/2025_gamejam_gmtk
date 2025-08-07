@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5pmrj7qjmgiv"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_7swlb"]
+[ext_resource type="PackedScene" uid="uid://bk2fekhhula84" path="res://loop/characters/boss-dialogue.tscn" id="2_etn4q"]
+
+[node name="Popup" instance=ExtResource("1_7swlb")]
+
+[node name="Narrator" parent="Panel" index="0"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+text = "“Cameras, huh?
+Fine— just means I need to be extra sneaky.
+Today’s mission? D E S T R U C T I O N!”"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 80.0
+offset_right = 512.0
+offset_bottom = 208.0
+text = "Good thing I had the crew fix everything overnight— back to the glorious grind!
+To boost productivity we’ve installed security cameras.
+They’re very expensive… Whoever I catch wrecking them gets nine-hundred-ninety-nine days of overtime!"
+
+[node name="Charater" parent="." index="2" instance=ExtResource("2_etn4q")]
+position = Vector2(616, 128)
+scale = Vector2(1.2, 1.2)

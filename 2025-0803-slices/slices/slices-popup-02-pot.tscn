@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://550uuil328qw"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_m2col"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="2_plrit"]
+
+[node name="Popup" instance=ExtResource("1_m2col")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 392.0
+offset_right = 496.0
+text = "Pot"
+horizontal_alignment = 2
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+text = "A pot is meant to be planted, 
+which has never happened. 
+Thank you."
+
+[node name="Label" parent="Panel" index="6"]
+visible = false
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_plrit")]
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)
+
+[node name="DialogueBonusPixel" parent="." index="3"]
+visible = false

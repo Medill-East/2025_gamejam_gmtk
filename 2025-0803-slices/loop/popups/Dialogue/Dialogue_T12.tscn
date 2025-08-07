@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf17v0ghd6rk8"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_pmw0d"]
+[ext_resource type="PackedScene" uid="uid://c7lwqjxbrnsh1" path="res://loop/characters/water machine-dialogue.tscn" id="2_pmw0d"]
+
+[node name="Popup" instance=ExtResource("1_pmw0d")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 368.0
+offset_right = 504.0
+scale = Vector2(1, 1.00977)
+text = "Water dispencer"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 184.0
+offset_right = 528.0
+text = "They make me work 24/7, just so he can stay hydrated yelling at interns."
+
+[node name="Breakables-dialogue2" parent="Node2D" index="0" instance=ExtResource("2_pmw0d")]
+position = Vector2(-6.94962, 8.92765)
+scale = Vector2(2.22996, 2.22451)

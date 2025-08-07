@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://3puqsfnt7m4p"]
+
+[ext_resource type="Script" uid="uid://ilp6l8uvb1tq" path="res://loop/characters/colleague_path.gd" id="1_7gg7t"]
+[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="2_i3ivy"]
+[ext_resource type="PackedScene" uid="uid://c0h4mo105g875" path="res://loop/characters/colleague 1.tscn" id="3_ourdp"]
+[ext_resource type="PackedScene" uid="uid://bgr5ppav0ajjf" path="res://loop/characters/colleague 3.tscn" id="4_mf75o"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3yhno"]
+points = PackedVector2Array(0, 0, -128, -64, -160, 0, -128, 64)
+
+[node name="Loop-friend3" type="CharacterBody2D"]
+script = ExtResource("1_7gg7t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.382905, 0.382905)
+texture = ExtResource("2_i3ivy")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(394, 185, 65, 111)
+
+[node name="VisionArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+collision_mask = 2
+
+[node name="VisionShape" type="CollisionShape2D" parent="VisionArea"]
+shape = SubResource("ConvexPolygonShape2D_3yhno")
+
+[node name="RayCastHolder" type="Node2D" parent="."]
+visible = false
+
+[node name="Charater" parent="." instance=ExtResource("3_ourdp")]
+visible = false
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Charater2" parent="." instance=ExtResource("4_mf75o")]
+scale = Vector2(-0.4, 0.4)

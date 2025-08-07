@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c78ruilin8g"]
+
+[ext_resource type="PackedScene" uid="uid://b7h1bb5pvtdo0" path="res://loop/item.tscn" id="1_tmk0h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1aaph"]
+load_path = "res://.godot/imported/Modern_Office_Black_Shadow_32x32.png-728f96cef55c4b8ce36ded4df9bec06c.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o08c1"]
+radius = 8.77058
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d67tg"]
+size = Vector2(30, 34)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cr67m"]
+points = PackedVector2Array(-8, 0, -182.851, -60.7078, -207.349, 8.8614, -178.277, 75.2153)
+
+[node name="camera-1" instance=ExtResource("1_tmk0h")]
+item_type = "camera"
+hold_threshold = 5.0
+turn_speed = 10.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("CompressedTexture2D_1aaph")
+region_rect = Rect2(352, 610, 31, 17)
+
+[node name="CollisionShape2D" parent="Detect" index="0"]
+shape = SubResource("CircleShape2D_o08c1")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = false
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_d67tg")
+
+[node name="VisionArea" type="Area2D" parent="." index="5"]
+visible = false
+rotation = 0.523598
+scale = Vector2(-1, -1)
+collision_layer = 8
+collision_mask = 2
+
+[node name="VisionShape" type="CollisionShape2D" parent="VisionArea" index="0"]
+shape = SubResource("ConvexPolygonShape2D_cr67m")
+
+[node name="Polygon2D" type="Polygon2D" parent="VisionArea" index="1"]
+color = Color(1, 0.25, 0.25, 0.235294)
+polygon = PackedVector2Array(0, 0, -182.851, -60.7078, -207.349, 8.8614, -178.277, 75.2153)

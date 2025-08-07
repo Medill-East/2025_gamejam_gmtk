@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://s4kdbm3q7ps4"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_ckp5e"]
+[ext_resource type="PackedScene" uid="uid://b2sknk0gilf46" path="res://loop/characters/security-dialogue.tscn" id="2_ppljm"]
+[ext_resource type="Script" uid="uid://v1abo37utsau" path="res://loop/popups/Dialogue/dialogue_t_05.gd" id="2_x52vk"]
+
+[node name="Popup05" instance=ExtResource("1_ckp5e")]
+script = ExtResource("2_x52vk")
+
+[node name="Narrator" parent="Panel" index="0"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+text = "Haha… Empty office, empty rules—"
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 432.0
+offset_right = 496.0
+text = "Security"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 152.0
+offset_right = 496.0
+text = "Hold it! Who’s prowling around?
+Kid, don’t make me catch you!"
+horizontal_alignment = 2
+
+[node name="Charater" parent="." index="2" instance=ExtResource("2_ppljm")]
+position = Vector2(616, 128)
+scale = Vector2(1.1, 1.1)

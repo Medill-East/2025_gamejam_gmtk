@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b56ws0nkbc0s5"]
+
+[ext_resource type="Texture2D" uid="uid://b8qch1ul23043" path="res://art/Loop/Characters.png" id="1_qggq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qggq4"]
+size = Vector2(72.5, 110)
+
+[node name="Charater" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qggq4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.38419e-07, -1.78814e-06)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_qggq4")

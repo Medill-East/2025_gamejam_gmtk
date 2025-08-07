@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://yxp8qa1me7wx"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_c7nb1"]
+[ext_resource type="PackedScene" uid="uid://bus75rj3lj3jc" path="res://loop/characters/camera-dialogue.tscn" id="2_c7nb1"]
+
+[node name="Popup" instance=ExtResource("1_c7nb1")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 392.0
+offset_right = 528.0
+scale = Vector2(1, 1.00977)
+text = "Surveillance"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 200.0
+offset_right = 520.0
+text = "I'm only here to spy on productivity. Joke's on him—I haven't seen any."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_c7nb1")]
+position = Vector2(-16.8663, -5.9606)
+scale = Vector2(1.70433, 1.70433)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://jxgtqqt54vl4"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_rw0m7"]
+[ext_resource type="PackedScene" uid="uid://bk2fekhhula84" path="res://loop/characters/boss-dialogue.tscn" id="2_do1se"]
+
+[node name="Popup" instance=ExtResource("1_rw0m7")]
+
+[node name="Narrator" parent="Panel" index="0"]
+visible = false
+
+[node name="Eric dialogue" parent="Panel" index="2"]
+text = "Looks like the sabotage must go on…"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 152.0
+offset_right = 496.0
+offset_bottom = 128.0
+text = "Office closed for repairs.
+Everyone gets a vacation for— three… two… one… day!"
+
+[node name="Charater" parent="." index="2" instance=ExtResource("2_do1se")]
+position = Vector2(616, 128)
+scale = Vector2(1.2, 1.2)

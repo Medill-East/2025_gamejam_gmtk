@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://y885yoqntg0b"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_y6af7"]
+[ext_resource type="PackedScene" uid="uid://djvdlnhv84smk" path="res://loop/characters/coffee machine-dialogue.tscn" id="2_y6af7"]
+
+[node name="Popup" instance=ExtResource("1_y6af7")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+offset_left = 368.0
+offset_right = 504.0
+scale = Vector2(1, 1.00977)
+text = "Coffee machine"
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 168.0
+offset_right = 512.0
+text = "Can you sabotage the budget report too? That thing burns more beans than my boiler."
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("2_y6af7")]
+scale = Vector2(1.97228, 1.97228)

@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://b83y4nf8jls20"]
+
+[ext_resource type="PackedScene" uid="uid://5ac4um4ox6ju" path="res://loop/popups/Dialogue/Dialogue_breakable-parent.tscn" id="1_l6cxq"]
+[ext_resource type="PackedScene" uid="uid://cbeqcgb4g20m8" path="res://slices/slices-me2-character.tscn" id="2_dom2s"]
+[ext_resource type="PackedScene" uid="uid://ls16ik6g4hqc" path="res://loop/characters/plant_dialogue.tscn" id="3_gxhhj"]
+[ext_resource type="PackedScene" uid="uid://p8r81r2pv370" path="res://slices/slices-me-character-nocollision.tscn" id="4_ghgr7"]
+[ext_resource type="PackedScene" uid="uid://b0a334lho3g3l" path="res://loop/item-breakable/table-light-2.tscn" id="5_1h1i1"]
+[ext_resource type="PackedScene" uid="uid://bw84j0tjcwarv" path="res://loop/item-breakable/printer.tscn" id="6_71rug"]
+[ext_resource type="PackedScene" uid="uid://og7yttj4x5t5" path="res://loop/item-breakable/orange-chair-back.tscn" id="7_dom2s"]
+
+[node name="Popup" instance=ExtResource("1_l6cxq")]
+
+[node name="Eric name2" parent="Panel" index="3"]
+visible = false
+offset_left = 392.0
+offset_right = 496.0
+text = "Cup"
+horizontal_alignment = 2
+
+[node name="Guest dialogue" parent="Panel" index="4"]
+offset_left = 128.0
+offset_top = 136.0
+offset_right = 472.0
+offset_bottom = 216.0
+text = "I am also a dancer, 
+wishing to rotate freely from time to time."
+
+[node name="Label" parent="Panel" index="6"]
+visible = false
+
+[node name="Charater" parent="Panel" index="7" instance=ExtResource("2_dom2s")]
+visible = false
+position = Vector2(24, 312)
+scale = Vector2(1, 1)
+
+[node name="Eric" parent="." index="1"]
+visible = false
+
+[node name="Breakables-dialogue" parent="Node2D" index="0" instance=ExtResource("3_gxhhj")]
+visible = false
+position = Vector2(-0.989015, -7.93863)
+scale = Vector2(2.32458, 2.32458)
+
+[node name="DialogueBonusPixel" parent="." index="3"]
+visible = false
+
+[node name="Charater" parent="." index="4" instance=ExtResource("4_ghgr7")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(104, 389)
+scale = Vector2(1, 1)
+
+[node name="Item3" parent="." index="5" instance=ExtResource("5_1h1i1")]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(608, 120)
+scale = Vector2(2, 2)
+
+[node name="Printer2" parent="." index="6" instance=ExtResource("6_71rug")]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(608, 112)
+scale = Vector2(2, 2)
+
+[node name="Item4" parent="." index="7" instance=ExtResource("7_dom2s")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(608, 112)
+scale = Vector2(-2, 2)

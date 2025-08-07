@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgg4rvfxyjnwo"]
+
+[ext_resource type="PackedScene" uid="uid://dpvfoyjdrg1y1" path="res://loop/popups/popup.tscn" id="1_8hpg1"]
+[ext_resource type="Texture2D" uid="uid://ccdp1o3rvglqh" path="res://UI/UI_DestructionCount.png" id="2_rmc5o"]
+
+[node name="Popup" instance=ExtResource("1_8hpg1")]
+
+[node name="Panel" parent="." index="0"]
+offset_top = 64.0
+offset_right = -896.0
+offset_bottom = -408.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel" index="2"]
+position = Vector2(160, 120)
+scale = Vector2(0.194823, 0.194823)
+texture = ExtResource("2_rmc5o")
